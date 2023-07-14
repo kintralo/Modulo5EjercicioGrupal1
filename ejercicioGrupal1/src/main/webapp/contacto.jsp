@@ -28,24 +28,27 @@
     Contacto</h1>
 <div class="container">
     <div class="row">
-        <form action="../ServletContacto" method="POST">
+        <form action="servlet-contacto" method="POST">
 
             <div class="form-group">
-                <label for="lblNombre">Nombre: </label> <input type="text"
-                                                               class="form-control" id="name" name="txtNombre"
-                                                               autofocus="autofocus" required>
+                <label for="lblNombre">Nombre: </label>
+                <input type="text" class="form-control" id="name" name="txtNombre"
+                       autofocus="autofocus" value="Alejador Magno" required>
 
 
             </div>
             <div class="form-group">
                 <label for="lblEmail">Correo Electrónico:</label> <input
                     type="email" class="form-control" id="email" name="txtEmail"
+                    value="alejandromagno@gmail.com"
                     required>
             </div>
             <div class="form-group">
                 <label for="lblMessage">Mensaje:</label>
                 <textarea class="form-control" id="message" name="txtMessage"
-                          rows="5" required></textarea>
+                          rows="5"
+                          value="Que funcione esa 0'210321'03930"
+                          required></textarea>
             </div>
             <button type="submit" class="btn btn-primary form-control mt-3">Enviar</button>
             <h5>Nombre Ingresado ${nombreSalida}</h5>

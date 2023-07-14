@@ -16,7 +16,7 @@
 <body>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="./index.jsp">Capacitaciones</a>
+        <a class="navbar-brand" href="index.jsp">Capacitaciones</a>
         <button class="navbar-toggler" type="button"
                 data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -26,10 +26,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item"><a class="nav-link active"
-                                        aria-current="page" href="./index.jsp">Home</a></li>
+                                        aria-current="page" href="index.jsp">Home</a></li>
                 <li class="nav-item"><a class="nav-link"
-                                        href="./views/capacitacion.jsp"><b>Capacitacion</b></a></li>
-                <li class="nav-item"><a class="nav-link" href="./views/contacto.jsp"><b>Contacto</b></a>
+                                        href="capacitacion.jsp"><b>Capacitacion</b></a></li>
+                <li class="nav-item"><a class="nav-link" href="contacto.jsp"><b>Contacto</b></a>
                 </li>
             </ul>
             <form class="d-flex" role="search">
