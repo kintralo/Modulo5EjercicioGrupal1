@@ -28,38 +28,39 @@
 <div class="container">
   <div class="row">
 
-    <form action="../ServletCapacitacion" method="POST">
+    <form action="servlet-capacitacion" method="POST">
       <label for="lblCodigoCapacitacion" class="form-label">
         <b>Código Capacitación</b>
       </label>
       <input type="txt" class="form-control" id=""
-             name="txtCodigoCapacitacion" autofocus="autofocus"
+             name="txtCodigoCapacitacion" value="2120" autofocus="autofocus"
              placeholder="Ingrese el código de la Capacitación">
       <label for="lblRut" class="form-label"><b>Rut</b></label>
       <input type="txt" class="form-control" id="" name="txtRut"
-             placeholder="Ingrese el Rut" required>
+             placeholder="Ingrese el Rut" value="12.234.454-1" required>
       <label for="lblDia" class="form-label">
         <b>Día</b>
       </label>
       <input type="txt" class="form-control" id="" name="txtDia"
-             placeholder="Ingrese el Día" required>
+             placeholder="Ingrese el Día" value="Lunes" required>
       <label for="lblHora"class="form-label">
         <b>Hora:</b>
       </label>
-      <input type="time" class="form-control" id="hora" name="txtHora" required>
+      <input type="time" class="form-control" id="hora" value="21:00"name="txtHora" required>
       <label for="lblDuracion" class="form-label">
         <b>Duración de la capacitación:</b>
       </label>
-      <input type="time" class="form-control" id="duracion" name="txtDuracion" required>
+      <input type="time" class="form-control" id="duracion" name="txtDuracion" value="01:00" required>
       <label for="lblAsistentes" class="form-label">
         <b>Cantidad de asistentes:</b>
       </label>
-      <input type="number" class="form-control" id="asistentes" name="asistentes" required>
+      <input type="number" class="form-control" id="asistentes" name="asistentes" value="12" required>
       <label for="lblLugarCapacitacion" class="form-label">
         <b>Lugar de la capacitación</b>
       </label>
       <textarea class="form-control" id="exampleFormControlTextarea1"
                 name="txtLugarCapacitacion" rows="3" placeholder="Ingrese el lugar de la Capacitación"
+                value="Aquí es la capacitación"
                 required>
 				</textarea>
 
