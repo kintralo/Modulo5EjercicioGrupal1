@@ -1,4 +1,4 @@
-package com.example.ejerciciogrupal1;
+package com.example.ejerciciogrupal1.servlet;
 
 import java.io.*;
 
