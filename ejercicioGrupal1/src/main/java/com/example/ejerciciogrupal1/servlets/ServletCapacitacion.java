@@ -1,4 +1,4 @@
-package com.example.ejerciciogrupal1.servlet;
+package com.example.ejerciciogrupal1.servlets;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -24,7 +24,8 @@ public class ServletCapacitacion extends HttpServlet {
         request.setAttribute("duracionCapacitacion", request.getParameter("txtDuracion"));
         request.setAttribute("cantidadAsistentes", request.getParameter("asistentes"));
         request.setAttribute("lugarCapacitacion", request.getParameter("txtLugarCapacitacion"));
-        RequestDispatcher rd = request.getRequestDispatcher("capacitacion.jsp");
+       // RequestDispatcher rd = request.getRequestDispatcher("capacitacion.jsp");
+        RequestDispatcher rd = request.getRequestDispatcher("listaCapacitaciones.jsp");
         rd.forward(request,  response);
     }
 

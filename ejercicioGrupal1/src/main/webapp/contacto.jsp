@@ -35,7 +35,6 @@
                 <input type="text" class="form-control" id="name" name="txtNombre"
                        autofocus="autofocus" value="Alejador Magno" required>
 
-
             </div>
             <div class="form-group">
                 <label for="lblEmail">Correo Electrónico:</label> <input
