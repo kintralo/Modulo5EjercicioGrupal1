@@ -1,4 +1,4 @@
-package com.example.ejerciciogrupal1.servlet;
+package com.example.ejerciciogrupal1.servlets;
 
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
