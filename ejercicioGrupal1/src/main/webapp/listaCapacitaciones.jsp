@@ -13,6 +13,16 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Contacto</title>
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+
     <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -115,6 +125,14 @@
 
                     </tbody>
                 </table>
+
+                <script>
+                    $(document).ready(function () {
+                        // Inicializar DataTable
+                        $(".table").DataTable();
+                    });
+                </script>
+
                 <script>
                     function eliminarCapacitacion(identificador) {
                         if (confirm('¿Está seguro que desea eliminar la capacitación ' + identificador + '?')) {
