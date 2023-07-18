@@ -5,6 +5,7 @@
   Time: 20:54
   To change this template use File | Settings | File Templates.
 --%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
          pageEncoding="ISO-8859-1" %>
 <!DOCTYPE html>
@@ -24,84 +25,114 @@
     <jsp:param name='title' value='Welcome'/>
 </jsp:include>
 
-<h1 class="mt-3" style='text-align: center'>Formulario Ingreso
-    Capacitaciones</h1>
-<div class="container">
+
+
+<div class="container mt-3">
     <div class="row">
+        <div class="col-md-4">
+            <h1 class="mt-3" style='text-align: center'>Ingreso Capacitaciones</h1>
+            <form action="servlet-capacitacion" method="POST">
+                <label for="lblCodigoCapacitacion" class="form-label">
+                    <b>Código Capacitación</b>
+                </label>
+                <input type="txt" class="form-control" id=""
+                       name="txtCodigoCapacitacion" value="" autofocus="autofocus"
+                       placeholder="Ingrese el código de la Capacitación">
+                <label for="lblRut" class="form-label"><b>Rut</b></label>
+                <input type="txt" class="form-control" id="" name="txtRut"
+                       placeholder="Ingrese el Rut" value="" required>
+                <label for="lblDia" class="form-label">
+                    <b>Día</b>
+                </label>
+                <input type="txt" class="form-control" id="" name="txtDia"
+                       placeholder="Ingrese el Día" value="Lunes" required>
+                <label for="lblLugarCapacitacion" class="form-label">
+                    <b>Lugar de la capacitación</b>
+                </label>
+                <textarea class="form-control" id="exampleFormControlTextarea1"
+                          name="txtLugarCapacitacion" rows="3" placeholder="Ingrese el lugar de la Capacitación"
+                          value="Aquí es la capacitación"
+                          required>
+            </textarea>
+                <label for="lblHora" class="form-label">
+                    <b>Hora:</b>
+                </label>
+                <input type="time" class="form-control" id="hora" value="" name="txtHora" required>
+                <label for="lblDuracion" class="form-label">
+                    <b>Duración de la capacitación:</b>
+                </label>
+                <input type="time" class="form-control" id="duracion" name="txtDuracion" value="" required>
+                <label for="lblAsistentes" class="form-label">
+                    <b>Cantidad de asistentes:</b>
+                </label>
+                <input type="number" class="form-control" id="asistentes" name="txtAsistentes" value="" required>
 
-        <form action="servlet-capacitacion" method="POST">
-            <label for="lblCodigoCapacitacion" class="form-label">
-                <b>Código Capacitación</b>
-            </label>
-            <input type="txt" class="form-control" id=""
-                   name="txtCodigoCapacitacion" value="2120" autofocus="autofocus"
-                   placeholder="Ingrese el código de la Capacitación">
-            <label for="lblRut" class="form-label"><b>Rut</b></label>
-            <input type="txt" class="form-control" id="" name="txtRut"
-                   placeholder="Ingrese el Rut" value="12.234.454-1" required>
-            <label for="lblDia" class="form-label">
-                <b>Día</b>
-            </label>
-            <input type="txt" class="form-control" id="" name="txtDia"
-                   placeholder="Ingrese el Día" value="Lunes" required>
-            <label for="lblHora"class="form-label">
-                <b>Hora:</b>
-            </label>
-            <input type="time" class="form-control" id="hora" value="21:00"name="txtHora" required>
-            <label for="lblDuracion" class="form-label">
-                <b>Duración de la capacitación:</b>
-            </label>
-            <input type="time" class="form-control" id="duracion" name="txtDuracion" value="01:00" required>
-            <label for="lblAsistentes" class="form-label">
-                <b>Cantidad de asistentes:</b>
-            </label>
-            <input type="number" class="form-control" id="asistentes" name="asistentes" value="12" required>
-            <label for="lblLugarCapacitacion" class="form-label">
-                <b>Lugar de la capacitación</b>
-            </label>
-            <textarea class="form-control" id="exampleFormControlTextarea1"
-                      name="txtLugarCapacitacion" rows="3" placeholder="Ingrese el lugar de la Capacitación"
-                      value="Aquí es la capacitación"
-                      required>
-				</textarea>
+                <button type="submit" class="btn btn-primary form-control mt-3">
+                    <b>Enviar</b>
+                </button>
+            </form>
+        </div>
+        <div class="col-md-8">
+            <h1 class="mt-3" style='text-align: center'>Listado de Capacitaciones</h1>
+            <div class="table-responsive">
+                <table class="table" action="servlet-capacitacion" method="DELETE">
+                    <thead>
+                    <tr>
+                        <th scope="col">Codigo Capacitación</th>
+                        <th scope="col">Rut</th>
+                        <th scope="col">Día</th>
+                        <th scope="col">Hora</th>
+                        <th scope="col">Lugar Capacitación</th>
+                        <th scope="col">Duración Capacitación</th>
+                        <th scope="col">Cantidad Asistentes</th>
+                        <th scope="col"><b>Botón</b></th>
+                        <th scope="col"><b>Botón</b></th>
+                    </tr>
+                    </thead>
+                    <tbody>
 
-            <button type="submit" class="btn btn-primary form-control mt-3">
-                <b>Enviar</b>
-            </button>
+                    <c:forEach items="${listaCapacitaciones}" var="capacitacion">
+                        <tr>
+                            <td>${capacitacion.identificador}</td>
+                            <td>${capacitacion.rut}</td>
+                            <td>${capacitacion.dia}</td>
+                            <td>${capacitacion.hora}</td>
+                            <td>${capacitacion.lugar}</td>
+                            <td>${capacitacion.duracion}</td>
+                            <td>${capacitacion.cantAsistentes}</td>
+                            <td>
+                                <button type="button" class="btn btn-warning ">
+                                    <b>Actualizar</b>
+                                </button>
+                            </td>
 
-        </form>
+                            <td>
+                                <input type="button" class="btn btn-danger " value="Eliminar"
+                                       onclick="eliminarCapacitacion('${capacitacion.identificador}')"/>
+                            </td>
+                        </tr>
+                    </c:forEach>
+
+                    </tbody>
+                </table>
+                <script>
+                    function eliminarCapacitacion(identificador) {
+                        if (confirm('¿Está seguro que desea eliminar la capacitación ' + identificador + '?')) {
+                            // hacer una llamada AJAX para eliminar la capacitación de la lista
+                            // por ejemplo, podríamos enviar una solicitud POST al servlet que maneja la eliminación de capacitaciones
+                            // después de eliminar la capacitación, volver a cargar la página para actualizar la tabla
+                            window.location.reload();
+                        }
+                    }
+                </script>
+            </div>
+        </div>
     </div>
 </div>
-<h1 class="mt-3" style='text-align: center'>Tabla de Capacitaciones</h1>
+</br>
 <div class="container">
     <div class="row">
-        <div class="table-responsive">
-            <table class="table">
-                <thead>
-                <tr>
-                    <th scope="col">Codigo Capacitación</th>
-                    <th scope="col">Rut</th>
-                    <th scope="col">Día</th>
-                    <th scope="col">Hora</th>
-                    <th scope="col">Duración Capacitación</th>
-                    <th scope="col">Cantidad Asistentes</th>
-                    <th scope="col">Lugar Capacitación</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <th scope="row">${codigoCapacitacion}</th>
-                    <td>${Rut}</td>
-                    <td>${Dia}</td>
-                    <td>${Hora}</td>
-                    <td>${duracionCapacitacion}</td>
-                    <td>${cantidadAsistentes}</td>
-                    <td>${lugarCapacitacion}</td>
-                </tr>
 
-                </tbody>
-            </table>
-        </div>
     </div>
 </div>
 
