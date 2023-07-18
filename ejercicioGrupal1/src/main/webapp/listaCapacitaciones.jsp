@@ -29,53 +29,15 @@
 
 <div class="container mt-3">
     <div class="row">
-        <div class="col-md-4">
-            <h1 class="mt-3" style='text-align: center'>Ingreso Capacitaciones</h1>
-            <form action="servlet-capacitacion" method="POST">
-                <label for="lblCodigoCapacitacion" class="form-label">
-                    <b>Código Capacitación</b>
-                </label>
-                <input type="txt" class="form-control" id=""
-                       name="txtCodigoCapacitacion" value="" autofocus="autofocus"
-                       placeholder="Ingrese el código de la Capacitación">
-                <label for="lblRut" class="form-label"><b>Rut</b></label>
-                <input type="txt" class="form-control" id="" name="txtRut"
-                       placeholder="Ingrese el Rut" value="" required>
-                <label for="lblDia" class="form-label">
-                    <b>Día</b>
-                </label>
-                <input type="txt" class="form-control" id="" name="txtDia"
-                       placeholder="Ingrese el Día" value="Lunes" required>
-                <label for="lblLugarCapacitacion" class="form-label">
-                    <b>Lugar de la capacitación</b>
-                </label>
-                <textarea class="form-control" id="exampleFormControlTextarea1"
-                          name="txtLugarCapacitacion" rows="3" placeholder="Ingrese el lugar de la Capacitación"
-                          value="Aquí es la capacitación"
-                          required>
-            </textarea>
-                <label for="lblHora" class="form-label">
-                    <b>Hora:</b>
-                </label>
-                <input type="time" class="form-control" id="hora" value="" name="txtHora" required>
-                <label for="lblDuracion" class="form-label">
-                    <b>Duración de la capacitación:</b>
-                </label>
-                <input type="time" class="form-control" id="duracion" name="txtDuracion" value="" required>
-                <label for="lblAsistentes" class="form-label">
-                    <b>Cantidad de asistentes:</b>
-                </label>
-                <input type="number" class="form-control" id="asistentes" name="txtAsistentes" value="" required>
-
-                <button type="submit" class="btn btn-primary form-control mt-3">
-                    <b>Enviar</b>
-                </button>
-            </form>
+        <div class="col-md-12">
+            <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#crearCapacitacion">
+                Crear Capacitación
+            </button>
         </div>
-        <div class="col-md-8">
+        <div class="col-md-12">
             <h1 class="mt-3" style='text-align: center'>Listado de Capacitaciones</h1>
             <div class="table-responsive">
-                <table class="table" action="servlet-capacitacion" method="DELETE">
+                <table id="tablaCapacitaciones" class="table" action="servlet-capacitacion" method="DELETE">
                     <thead>
                     <tr>
                         <th scope="col">Codigo Capacitación</th>
@@ -140,6 +102,10 @@
     <jsp:param name='title' value='Welcome'/>
 </jsp:include>
 
+<jsp:include page='modalCapacitacion.jsp' flush="true"/>
+
+
+
 <script
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
@@ -152,5 +118,20 @@
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
         crossorigin="anonymous"></script>
+
 </body>
 </html>
+<script>
+    const myModal = document.getElementById('myModal')
+    const myInput = document.getElementById('myInput')
+
+    myModal.addEventListener('shown.bs.modal', () => {
+        myInput.focus()
+    })
+</script>
+<script>
+    $(document).ready(function () {
+        // Inicializar DataTable
+        $(".table").DataTable();
+    });
+</script>
