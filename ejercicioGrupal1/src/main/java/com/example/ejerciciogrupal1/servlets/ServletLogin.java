@@ -30,7 +30,7 @@ public class ServletLogin extends HttpServlet {
         String usuario = request.getParameter("txtUserName");
         String password = request.getParameter("txtPassword");
         String usuarioIngreso= "admin";
-        String usuarioPassword= "admin";
+        String usuarioPassword= "1234";
 
         if (usuario.equals(usuarioIngreso) && password.equals(usuarioPassword)) {
             intentos = 0; // reiniciar el contador
