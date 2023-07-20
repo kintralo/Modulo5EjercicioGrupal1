@@ -20,10 +20,9 @@
 </head>
 <body>
 <div>
+    <h2  class="mt-3" style='text-align: center'>Login</h2>
     <div class="container">
-
       <div class="row">
-        <h2  class="mt-3" style='text-align: center'>Login</h2>
             <form action="servlet-login" method="post" class="was-validated">
                 <div class="form-group">
                     <label for="username">Usuario:</label>

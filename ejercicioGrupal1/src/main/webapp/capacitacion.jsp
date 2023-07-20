@@ -35,10 +35,10 @@
             <b>Código Capacitación</b>
           </label>
           <input type="number" class="form-control" id=""
-                 name="txtCodigoCapacitacion" value="" autofocus="autofocus"
+                 name="txtCodigoCapacitacion" value="101" autofocus="autofocus"
                  placeholder="Ingrese el código de la Capacitación">
           <label for="lblRut" class="form-label"><b>Rut</b></label>
-          <input type="number" class="form-control" id="" name="txtRut"
+          <input type="number" class="form-control" id="103988" name="txtRut"
                  placeholder="Ingrese el Rut" value="" required>
           <label for="lblDia" class="form-label">
             <b>Día</b>
@@ -56,15 +56,15 @@
           <label for="lblHora" class="form-label">
             <b>Hora:</b>
           </label>
-          <input type="time" class="form-control" id="hora" value="" name="txtHora" required>
+          <input type="time" class="form-control" id="hora" value="11:30" name="txtHora" required>
           <label for="lblDuracion" class="form-label">
             <b>Duración de la capacitación:</b>
           </label>
-          <input type="time" class="form-control" id="duracion" name="txtDuracion" value="" required>
+          <input type="time" class="form-control" id="duracion" name="txtDuracion" value="01:00" required>
           <label for="lblAsistentes" class="form-label">
             <b>Cantidad de asistentes:</b>
           </label>
-          <input type="number" class="form-control" id="asistentes" name="txtAsistentes" value="" required>
+          <input type="number" class="form-control" id="asistentes" name="txtAsistentes" value="12" required>
 
         </div>
       </div>
@@ -87,9 +87,6 @@
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
         integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
         crossorigin="anonymous"></script>
-<script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+
 </body>
 </html>

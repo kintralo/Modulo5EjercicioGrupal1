@@ -61,10 +61,10 @@
             <form action="servlet-cerrar-sesion" method="POST" class="d-flex" role="search">
 
                 <button class="btn btn-outline-success" type="submit">Cerrar Sesión</button>
+                <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#loginModal">
+                    Login
+                </button>
             </form>
-            <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#loginModal">
-                Login
-            </button>
         </div>
     </div>
 </nav>

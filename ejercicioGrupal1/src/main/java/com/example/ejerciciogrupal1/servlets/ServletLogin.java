@@ -34,7 +34,7 @@ public class ServletLogin extends HttpServlet {
 
         if (usuario.equals(usuarioIngreso) && password.equals(usuarioPassword)) {
             intentos = 0; // reiniciar el contador
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("contacto.jsp");
         } else {
             intentos++;
             if (intentos == 3) {
