@@ -49,10 +49,6 @@
                           value="Que funcione esa 0'210321'03930"
                           required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary form-control mt-3">Enviar</button>
-            <h5>Nombre Ingresado ${nombreSalida}</h5>
-            <h5>Email Ingresado ${emailSalida}</h5>
-            <h5>Mensaje Ingresado ${mensajeSalida}</h5>
         </form>
     </div>
 </div>
