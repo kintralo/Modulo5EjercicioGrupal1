@@ -41,69 +41,74 @@
 <div class="container mt-3">
     <div class="row">
         <div class="col-md-12">
-            <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#crearCapacitacion">
+            <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal"
+                    data-bs-target="#crearCapacitacion">
                 Crear Capacitación
             </button>
         </div>
-        <div class="col-md-12">
-            <h1 class="mt-3" style='text-align: center'>Listado de Capacitaciones</h1>
-            <div class="table-responsive">
-                <table id="tablaCapacitaciones" class="table" action="servlet-capacitacion" method="DELETE">
-                    <thead>
+    </div>
+</div>
+
+<div class="container mt-3">
+    <div class="row">
+        <h1 class="mt-3" style='text-align: center'>Listado de Capacitaciones</h1>
+        <div class="table-responsive">
+            <table id="tablaCapacitaciones" class="table" action="servlet-capacitacion" method="DELETE">
+                <thead>
+                <tr>
+                    <th scope="col">Codigo Capacitación</th>
+                    <th scope="col">Rut</th>
+                    <th scope="col">Día</th>
+                    <th scope="col">Hora</th>
+                    <th scope="col">Lugar Capacitación</th>
+                    <th scope="col">Duración Capacitación</th>
+                    <th scope="col">Cantidad Asistentes</th>
+                    <th scope="col"><b>Botón</b></th>
+                    <th scope="col"><b>Botón</b></th>
+                </tr>
+                </thead>
+                <tbody>
+
+                <c:forEach items="${listaCapacitaciones}" var="capacitacion">
                     <tr>
-                        <th scope="col">Codigo Capacitación</th>
-                        <th scope="col">Rut</th>
-                        <th scope="col">Día</th>
-                        <th scope="col">Hora</th>
-                        <th scope="col">Lugar Capacitación</th>
-                        <th scope="col">Duración Capacitación</th>
-                        <th scope="col">Cantidad Asistentes</th>
-                        <th scope="col"><b>Botón</b></th>
-                        <th scope="col"><b>Botón</b></th>
+                        <td>${capacitacion.identificador}</td>
+                        <td>${capacitacion.rut}</td>
+                        <td>${capacitacion.dia}</td>
+                        <td>${capacitacion.hora}</td>
+                        <td>${capacitacion.lugar}</td>
+                        <td>${capacitacion.duracion}</td>
+                        <td>${capacitacion.cantAsistentes}</td>
+                        <td>
+                            <button type="button" class="btn btn-warning ">
+                                <b>Actualizar</b>
+                            </button>
+                        </td>
+
+                        <td>
+                            <input type="button" class="btn btn-danger " value="Eliminar"
+                                   onclick="eliminarCapacitacion('${capacitacion.identificador}')"/>
+                        </td>
                     </tr>
-                    </thead>
-                    <tbody>
+                </c:forEach>
 
-                    <c:forEach items="${listaCapacitaciones}" var="capacitacion">
-                        <tr>
-                            <td>${capacitacion.identificador}</td>
-                            <td>${capacitacion.rut}</td>
-                            <td>${capacitacion.dia}</td>
-                            <td>${capacitacion.hora}</td>
-                            <td>${capacitacion.lugar}</td>
-                            <td>${capacitacion.duracion}</td>
-                            <td>${capacitacion.cantAsistentes}</td>
-                            <td>
-                                <button type="button" class="btn btn-warning ">
-                                    <b>Actualizar</b>
-                                </button>
-                            </td>
-
-                            <td>
-                                <input type="button" class="btn btn-danger " value="Eliminar"
-                                       onclick="eliminarCapacitacion('${capacitacion.identificador}')"/>
-                            </td>
-                        </tr>
-                    </c:forEach>
-
-                    </tbody>
-                </table>
+                </tbody>
+            </table>
 
 
-                <script>
-                    function eliminarCapacitacion(identificador) {
-                        if (confirm('¿Está seguro que desea eliminar la capacitación ' + identificador + '?')) {
-                            // hacer una llamada AJAX para eliminar la capacitación de la lista
-                            // por ejemplo, podríamos enviar una solicitud POST al servlet que maneja la eliminación de capacitaciones
-                            // después de eliminar la capacitación, volver a cargar la página para actualizar la tabla
-                            window.location.reload();
-                        }
+            <script>
+                function eliminarCapacitacion(identificador) {
+                    if (confirm('¿Está seguro que desea eliminar la capacitación ' + identificador + '?')) {
+                        // hacer una llamada AJAX para eliminar la capacitación de la lista
+                        // por ejemplo, podríamos enviar una solicitud POST al servlet que maneja la eliminación de capacitaciones
+                        // después de eliminar la capacitación, volver a cargar la página para actualizar la tabla
+                        window.location.reload();
                     }
-                </script>
-            </div>
+                }
+            </script>
         </div>
     </div>
 </div>
+
 </br>
 <div class="container">
     <div class="row">
@@ -114,9 +119,6 @@
 <jsp:include page='footer.jsp'>
     <jsp:param name='title' value='Welcome'/>
 </jsp:include>
-
-
-
 
 
 <script
