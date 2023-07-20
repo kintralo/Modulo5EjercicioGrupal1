@@ -1,4 +1,3 @@
-
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
@@ -9,9 +8,10 @@
                 <h1 class="modal-title fs-5" id="exampleModalLabel">Ingreso Capacitaciones</h1>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <form action="servlet-capacitacion" method="POST">
-                <div class="modal-body">
-                    <div class="col-md-12">
+
+            <div class="modal-body">
+                <div class="col-md-12">
+                    <form action="servlet-capacitacion" method="POST">
                         <label for="lblCodigoCapacitacion" class="form-label">
                             <b>Código Capacitación</b>
                         </label>
@@ -45,14 +45,15 @@
                         <label for="lblAsistentes" class="form-label">
                             <b>Cantidad de asistentes:</b>
                         </label>
-                        <input type="number" class="form-control" id="asistentes" name="txtAsistentes" value="12" required>
+                        <input type="number" class="form-control" id="asistentes" name="txtAsistentes" value="12"
+                               required>
 
-                    </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-primary">Guardar</button>
-                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
             </form>
 
         </div>
