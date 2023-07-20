@@ -29,53 +29,49 @@
   <div class="row">
 
     <form action="servlet-capacitacion" method="POST">
-      <label for="lblCodigoCapacitacion" class="form-label">
-        <b>Código Capacitación</b>
-      </label>
-      <input type="txt" class="form-control" id=""
-             name="txtCodigoCapacitacion" value="2120" autofocus="autofocus"
-             placeholder="Ingrese el código de la Capacitación">
-      <label for="lblRut" class="form-label"><b>Rut</b></label>
-      <input type="txt" class="form-control" id="" name="txtRut"
-             placeholder="Ingrese el Rut" value="12.234.454-1" required>
-      <label for="lblDia" class="form-label">
-        <b>Día</b>
-      </label>
-      <input type="txt" class="form-control" id="" name="txtDia"
-             placeholder="Ingrese el Día" value="Lunes" required>
-      <label for="lblHora"class="form-label">
-        <b>Hora:</b>
-      </label>
-      <input type="time" class="form-control" id="hora" value="21:00"name="txtHora" required>
-      <label for="lblDuracion" class="form-label">
-        <b>Duración de la capacitación:</b>
-      </label>
-      <input type="time" class="form-control" id="duracion" name="txtDuracion" value="01:00" required>
-      <label for="lblAsistentes" class="form-label">
-        <b>Cantidad de asistentes:</b>
-      </label>
-      <input type="number" class="form-control" id="asistentes" name="asistentes" value="12" required>
-      <label for="lblLugarCapacitacion" class="form-label">
-        <b>Lugar de la capacitación</b>
-      </label>
-      <textarea class="form-control" id="exampleFormControlTextarea1"
-                name="txtLugarCapacitacion" rows="3" placeholder="Ingrese el lugar de la Capacitación"
-                value="Aquí es la capacitación"
-                required>
-				</textarea>
+      <div class="modal-body">
+        <div class="col-md-12">
+          <label for="lblCodigoCapacitacion" class="form-label">
+            <b>Código Capacitación</b>
+          </label>
+          <input type="number" class="form-control" id=""
+                 name="txtCodigoCapacitacion" value="" autofocus="autofocus"
+                 placeholder="Ingrese el código de la Capacitación">
+          <label for="lblRut" class="form-label"><b>Rut</b></label>
+          <input type="number" class="form-control" id="" name="txtRut"
+                 placeholder="Ingrese el Rut" value="" required>
+          <label for="lblDia" class="form-label">
+            <b>Día</b>
+          </label>
+          <input type="txt" class="form-control" id="" name="txtDia"
+                 placeholder="Ingrese el Día" value="Lunes" required>
+          <label for="lblLugarCapacitacion" class="form-label">
+            <b>Lugar de la capacitación</b>
+          </label>
+          <textarea class="form-control" id="exampleFormControlTextarea1"
+                    name="txtLugarCapacitacion" rows="3" placeholder="Ingrese el lugar de la Capacitación"
+                    value="Aquí es la capacitación"
+                    required>
+                            </textarea>
+          <label for="lblHora" class="form-label">
+            <b>Hora:</b>
+          </label>
+          <input type="time" class="form-control" id="hora" value="" name="txtHora" required>
+          <label for="lblDuracion" class="form-label">
+            <b>Duración de la capacitación:</b>
+          </label>
+          <input type="time" class="form-control" id="duracion" name="txtDuracion" value="" required>
+          <label for="lblAsistentes" class="form-label">
+            <b>Cantidad de asistentes:</b>
+          </label>
+          <input type="number" class="form-control" id="asistentes" name="txtAsistentes" value="" required>
 
-      <button type="submit" class="btn btn-primary form-control mt-3">
-        <b>Enviar</b>
-      </button>
-
-      <h5>Codigo Capacitacion ${codigoCapacitacion}</h5>
-      <h5>Rut ${Rut}</h5>
-      <h5>Dia ${Dia}</h5>
-      <h5>Hora ${Hora}</h5>
-      <h5>Duracion Capacitacion ${duracionCapacitacion}</h5>
-      <h5>Cantidad Asistentes ${cantidadAsistentes}</h5>
-      <h5>Lugar Capacitacion ${lugarCapacitacion}</h5>
-
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+      </div>
     </form>
   </div>
 </div>
