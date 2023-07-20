@@ -35,7 +35,7 @@
 <jsp:include page='header.jsp'>
     <jsp:param name='title' value='Welcome'/>
 </jsp:include>
-
+<jsp:include page='modalCapacitacion.jsp' flush="true"/>
 
 
 <div class="container mt-3">
@@ -89,12 +89,6 @@
                     </tbody>
                 </table>
 
-                <script>
-                    $(document).ready(function () {
-                        // Inicializar DataTable
-                        $(".table").DataTable();
-                    });
-                </script>
 
                 <script>
                     function eliminarCapacitacion(identificador) {
@@ -121,7 +115,7 @@
     <jsp:param name='title' value='Welcome'/>
 </jsp:include>
 
-<jsp:include page='modalCapacitacion.jsp' flush="true"/>
+
 
 
 
