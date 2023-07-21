@@ -11,19 +11,26 @@
 <html>
 <head>
   <meta charset="ISO-8859-1">
-  <title>Formulario Capacitación</title>
+  <title>Formulario CapacitaciÃ³n</title>
   <link
           href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
           rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
           crossorigin="anonymous">
+    <%
+        session = request.getSession();
+        if(session.getAttribute("sesion")!="true"){
+    %>
+    response.sendRedirect("index.jsp");
+    <%
+        }%>
 </head>
 <body>
 <jsp:include page='header.jsp'>
   <jsp:param name='title' value='Welcome' />
 </jsp:include>
 <h1 class="mt-3" style='text-align: center'>Formulario
-  Capacitación</h1>
+  CapacitaciÃ³n</h1>
 
 <div class="container">
   <div class="row">
@@ -32,25 +39,25 @@
       <div class="modal-body">
         <div class="col-md-12">
           <label for="lblCodigoCapacitacion" class="form-label">
-            <b>Código Capacitación</b>
+            <b>CÃ³digo CapacitaciÃ³n</b>
           </label>
           <input type="number" class="form-control" id=""
                  name="txtCodigoCapacitacion" value="101" autofocus="autofocus"
-                 placeholder="Ingrese el código de la Capacitación">
+                 placeholder="Ingrese el cÃ³digo de la CapacitaciÃ³n">
           <label for="lblRut" class="form-label"><b>Rut</b></label>
           <input type="number" class="form-control" id="103988" name="txtRut"
                  placeholder="Ingrese el Rut" value="" required>
           <label for="lblDia" class="form-label">
-            <b>Día</b>
+            <b>DÃ­a</b>
           </label>
           <input type="txt" class="form-control" id="" name="txtDia"
-                 placeholder="Ingrese el Día" value="Lunes" required>
+                 placeholder="Ingrese el DÃ­a" value="Lunes" required>
           <label for="lblLugarCapacitacion" class="form-label">
-            <b>Lugar de la capacitación</b>
+            <b>Lugar de la capacitaciÃ³n</b>
           </label>
           <textarea class="form-control" id="exampleFormControlTextarea1"
-                    name="txtLugarCapacitacion" rows="3" placeholder="Ingrese el lugar de la Capacitación"
-                    value="Aquí es la capacitación"
+                    name="txtLugarCapacitacion" rows="3" placeholder="Ingrese el lugar de la CapacitaciÃ³n"
+                    value="AquÃ­ es la capacitaciÃ³n"
                     required>
                             </textarea>
           <label for="lblHora" class="form-label">
@@ -58,7 +65,7 @@
           </label>
           <input type="time" class="form-control" id="hora" value="11:30" name="txtHora" required>
           <label for="lblDuracion" class="form-label">
-            <b>Duración de la capacitación:</b>
+            <b>DuraciÃ³n de la capacitaciÃ³n:</b>
           </label>
           <input type="time" class="form-control" id="duracion" name="txtDuracion" value="01:00" required>
           <label for="lblAsistentes" class="form-label">
