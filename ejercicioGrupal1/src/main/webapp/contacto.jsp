@@ -19,11 +19,10 @@
             crossorigin="anonymous">
     <%
         session = request.getSession();
-        if(session.getAttribute("sesion")!="true"){
+        if (session != null) {
     %>
-    response.sendRedirect("index.jsp");
-    <%
-        }%>
+
+
 </head>
 <body>
 
@@ -44,7 +43,7 @@
 
             </div>
             <div class="form-group">
-                <label for="lblEmail">Correo ElectrÃ³nico:</label> <input
+                <label for="lblEmail">Correo Electrónico:</label> <input
                     type="email" class="form-control" id="email" name="txtEmail"
                     value="alejandromagno@gmail.com"
                     required>
@@ -56,10 +55,16 @@
                           value="Que funcione esa 0'210321'03930"
                           required></textarea>
             </div>
+            <button type="submit" class="btn btn-primary form-control ">Enviar</button>
         </form>
     </div>
 </div>
 
+<%
+    } else {
+        response.sendRedirect("index.jsp");
+    }
+%>
 
 <jsp:include page='footer.jsp'>
     <jsp:param name='title' value='Welcome'/>
@@ -73,9 +78,6 @@
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
         integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
         crossorigin="anonymous"></script>
-<script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+
 </body>
 </html>

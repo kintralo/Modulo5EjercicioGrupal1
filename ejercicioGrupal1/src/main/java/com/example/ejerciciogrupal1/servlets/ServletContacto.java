@@ -15,8 +15,12 @@ public class ServletContacto extends HttpServlet {
     }
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doGet(req, resp);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+       if (request.getSession()==null){
+           //response.sendRedirect("index.jsp");
+           RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+           dispatcher.forward(request,response);
+       }
     }
 
     /**
