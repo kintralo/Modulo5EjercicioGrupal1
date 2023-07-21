@@ -17,6 +17,13 @@
             rel="stylesheet"
             integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
             crossorigin="anonymous">
+    <%
+        session = request.getSession();
+        if(session.getAttribute("sesion")!="true"){
+    %>
+    response.sendRedirect("index.jsp");
+    <%
+        }%>
 </head>
 <body>
 
@@ -37,7 +44,7 @@
 
             </div>
             <div class="form-group">
-                <label for="lblEmail">Correo Electrónico:</label> <input
+                <label for="lblEmail">Correo ElectrÃ³nico:</label> <input
                     type="email" class="form-control" id="email" name="txtEmail"
                     value="alejandromagno@gmail.com"
                     required>
