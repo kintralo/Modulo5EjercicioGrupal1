@@ -46,10 +46,10 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
-                        <b>Capacitación</b>
+                        <b>CapacitaciÃ³n</b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="capacitacion.jsp">Crear Capacitación</a></li>
+                        <li><a class="dropdown-item" href="capacitacion.jsp">Crear CapacitaciÃ³n</a></li>
                         <li><a class="dropdown-item" href="listaCapacitaciones.jsp">Listar Capacitaciones</a></li>
                         <li>
                             <hr class="dropdown-divider">
@@ -58,13 +58,21 @@
                     </ul>
                 </li>-->
             </ul>
-            <form action="servlet-cerrar-sesion" method="POST" class="d-flex" role="search">
-
-                <button class="btn btn-outline-success" type="submit">Cerrar Sesión</button>
-                <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#loginModal">
-                    Login
-                </button>
-            </form>
+            <%
+                session = request.getSession();
+                if(session.getAttribute("sesion").equals("true")){
+            %>
+                <form action="servlet-cerrar-sesion" method="POST" class="d-flex" role="search">
+                    <button class="btn btn-outline-success" type="submit">Cerrar SesiÃ³n</button>
+                </form>
+            <%
+                }
+                else{%>
+                    <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#loginModal">
+                        Login
+                    </button>
+                <%}
+            %>
         </div>
     </div>
 </nav>
