@@ -29,6 +29,13 @@
             integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
             crossorigin="anonymous">
     <link rel="stylesheet" href="./css/style.css">
+    <%
+        session = request.getSession();
+        if(session.getAttribute("sesion")!="true"){
+    %>
+    response.sendRedirect("index.jsp");
+    <%
+        }%>
 </head>
 <body>
 
@@ -43,7 +50,7 @@
         <div class="col-md-12">
             <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal"
                     data-bs-target="#crearCapacitacion">
-                Crear Capacitación
+                Crear CapacitaciÃ³n
             </button>
         </div>
     </div>
@@ -56,15 +63,15 @@
             <table id="tablaCapacitaciones" class="table" action="servlet-capacitacion" method="DELETE">
                 <thead>
                 <tr>
-                    <th scope="col">Codigo Capacitación</th>
+                    <th scope="col">Codigo CapacitaciÃ³n</th>
                     <th scope="col">Rut</th>
-                    <th scope="col">Día</th>
+                    <th scope="col">DÃ­a</th>
                     <th scope="col">Hora</th>
-                    <th scope="col">Lugar Capacitación</th>
-                    <th scope="col">Duración Capacitación</th>
+                    <th scope="col">Lugar CapacitaciÃ³n</th>
+                    <th scope="col">DuraciÃ³n CapacitaciÃ³n</th>
                     <th scope="col">Cantidad Asistentes</th>
-                    <th scope="col"><b>Botón</b></th>
-                    <th scope="col"><b>Botón</b></th>
+                    <th scope="col"><b>BotÃ³n</b></th>
+                    <th scope="col"><b>BotÃ³n</b></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -97,10 +104,10 @@
 
             <script>
                 function eliminarCapacitacion(identificador) {
-                    if (confirm('¿Está seguro que desea eliminar la capacitación ' + identificador + '?')) {
-                        // hacer una llamada AJAX para eliminar la capacitación de la lista
-                        // por ejemplo, podríamos enviar una solicitud POST al servlet que maneja la eliminación de capacitaciones
-                        // después de eliminar la capacitación, volver a cargar la página para actualizar la tabla
+                    if (confirm('Â¿EstÃ¡ seguro que desea eliminar la capacitaciÃ³n ' + identificador + '?')) {
+                        // hacer una llamada AJAX para eliminar la capacitaciÃ³n de la lista
+                        // por ejemplo, podrÃ­amos enviar una solicitud POST al servlet que maneja la eliminaciÃ³n de capacitaciones
+                        // despuÃ©s de eliminar la capacitaciÃ³n, volver a cargar la pÃ¡gina para actualizar la tabla
                         window.location.reload();
                     }
                 }
