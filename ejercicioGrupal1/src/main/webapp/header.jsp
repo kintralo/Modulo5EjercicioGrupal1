@@ -6,20 +6,8 @@
     <meta charset="ISO-8859-1">
     <title>Inicio</title>
     <link rel="stylesheet" href="./css/style.css">
-    <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-            crossorigin="anonymous">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
 
 </head>
 <body>
@@ -46,10 +34,10 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                        aria-expanded="false">
-                        <b>CapacitaciÃ³n</b>
+                        <b>Capacitación</b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="capacitacion.jsp">Crear CapacitaciÃ³n</a></li>
+                        <li><a class="dropdown-item" href="capacitacion.jsp">Crear Capacitación</a></li>
                         <li><a class="dropdown-item" href="listaCapacitaciones.jsp">Listar Capacitaciones</a></li>
                         <li>
                             <hr class="dropdown-divider">
@@ -60,29 +48,29 @@
             </ul>
             <%
                 session = request.getSession();
-                if(session.getAttribute("sesion").equals("true")){
+                if (session != null) {
             %>
-                <form action="servlet-cerrar-sesion" method="POST" class="d-flex" role="search">
-                    <button class="btn btn-outline-success" type="submit">Cerrar SesiÃ³n</button>
-                </form>
+            <form action="servlet-cerrar-sesion" method="POST" class="d-flex" role="search">
+                <button class="btn btn-outline-success" type="submit">Cerrar Sesión</button>
+            </form>
+            <%
+            } else {%>
+            <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#loginModal">
+                Login
+            </button>
             <%
                 }
-                else{%>
-                    <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal" data-bs-target="#loginModal">
-                        Login
-                    </button>
-                <%}
             %>
         </div>
     </div>
 </nav>
 
 
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
-        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct"
         crossorigin="anonymous"></script>
 </body>
 </html>
