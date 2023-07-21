@@ -11,7 +11,7 @@ import java.io.IOException;
 @WebServlet(name = "servletLogin", value = "/servlet-login")
 public class ServletLogin extends HttpServlet {
     private int intentos = 0;
-
+    private HttpSession session;
     /**
      *
      */
@@ -34,6 +34,9 @@ public class ServletLogin extends HttpServlet {
 
         if (usuario.equals(usuarioIngreso) && password.equals(usuarioPassword)) {
             intentos = 0; // reiniciar el contador
+            session = request.getSession();
+            session.setAttribute("usuario",request.getParameter("admin"));
+            session.setAttribute("sesion",request.getParameter("true"));
             response.sendRedirect("contacto.jsp");
         } else {
             intentos++;
