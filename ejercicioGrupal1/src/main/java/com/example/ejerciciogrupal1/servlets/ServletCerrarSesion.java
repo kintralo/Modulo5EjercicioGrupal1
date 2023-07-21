@@ -10,6 +10,7 @@ import jakarta.servlet.http.HttpSession;
 import java.io.IOException;
 @WebServlet(name = "servletCerrarSesion", value = "/servlet-cerrar-sesion")
 public class ServletCerrarSesion extends HttpServlet {
+    private HttpSession session;
     public ServletCerrarSesion() {
     }
 
