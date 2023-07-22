@@ -31,14 +31,12 @@
 
 </head>
 <body>
+<%
+    if (request.getSession().getAttribute("sesion") != null) {
+%>
 
 <jsp:include page='header.jsp'/>
 <jsp:include page='modalCapacitacion.jsp' flush="true"/>
-<%
-    if (request.getSession() == null) {
-        response.sendRedirect("index.jsp");
-    }%>
-
 
 <div class="container mt-3">
     <div class="row">
@@ -119,12 +117,11 @@
     </div>
 </div>
 </br>
-<div class="container">
-    <div class="row">
-
-    </div>
-</div>
-
+<%
+    } else {
+    response.sendRedirect("login.jsp");
+    }
+%>
 <jsp:include page='footer.jsp'/>
 
 <script>

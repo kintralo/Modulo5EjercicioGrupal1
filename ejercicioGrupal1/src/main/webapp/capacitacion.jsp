@@ -20,12 +20,13 @@
 
 </head>
 <body>
-<jsp:include page='header.jsp' />
 
 <%
-  if (session != null) {
-    response.sendRedirect("index.jsp");
-  }%>
+  if (request.getSession().getAttribute("sesion") != null) {
+%>
+
+<jsp:include page='header.jsp' />
+
 <h1 class="mt-3" style='text-align: center'>Formulario
   Capacitación</h1>
 
@@ -79,10 +80,12 @@
     </form>
   </div>
 </div>
-
-<jsp:include page='footer.jsp'>
-  <jsp:param name='title' value='Welcome' />
-</jsp:include>
+<%
+  } else {
+    response.sendRedirect("login.jsp");
+  }
+%>
+<jsp:include page='footer.jsp' />
 <script
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
