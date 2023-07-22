@@ -17,14 +17,12 @@
             rel="stylesheet"
             integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
             crossorigin="anonymous">
-    <%
-        session = request.getSession();
-        if (session != null) {
-    %>
-
 
 </head>
 <body>
+<%
+    if (request.getSession().getAttribute("sesion") != null) {
+%>
 
 <jsp:include page='header.jsp'>
     <jsp:param name='title' value='Welcome'/>
@@ -62,13 +60,11 @@
 
 <%
     } else {
-        response.sendRedirect("index.jsp");
+        response.sendRedirect("login.jsp");
     }
 %>
 
-<jsp:include page='footer.jsp'>
-    <jsp:param name='title' value='Welcome'/>
-</jsp:include>
+<jsp:include page='footer.jsp'/>
 
 <script
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
