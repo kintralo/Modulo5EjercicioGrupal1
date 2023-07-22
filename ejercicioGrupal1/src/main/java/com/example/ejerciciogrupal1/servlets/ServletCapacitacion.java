@@ -52,7 +52,8 @@ public class ServletCapacitacion extends HttpServlet {
         String horaIngresada = request.getParameter("txtHora");
         LocalTime hora = LocalTime.parse(horaIngresada);
         String lugar = request.getParameter("txtLugarCapacitacion");
-        String duracion = request.getParameter("txtDuracion");
+        String duracionIngresada = request.getParameter("txtDuracion");
+        LocalTime duracion = LocalTime.parse(duracionIngresada);
         int cantAsistentes = Integer.parseInt(request.getParameter("txtAsistentes"));
 
         Capacitacion capacitacion = new Capacitacion(identificador, run, dia, hora, lugar, duracion, cantAsistentes);
