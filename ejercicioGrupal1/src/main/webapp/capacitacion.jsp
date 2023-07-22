@@ -17,16 +17,15 @@
           rel="stylesheet"
           integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
           crossorigin="anonymous">
-  <%
-    session = request.getSession();
-    if (session == null) {
-      response.sendRedirect("index.jsp");
-    }%>
+
 </head>
 <body>
-<jsp:include page='header.jsp'>
-  <jsp:param name='title' value='Welcome' />
-</jsp:include>
+<jsp:include page='header.jsp' />
+
+<%
+  if (session != null) {
+    response.sendRedirect("index.jsp");
+  }%>
 <h1 class="mt-3" style='text-align: center'>Formulario
   Capacitación</h1>
 
