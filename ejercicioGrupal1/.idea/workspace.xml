@@ -9,12 +9,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bccc322f-4ef6-4685-8453-ed1e0d6fd345" name="Changes" comment="Resolución problemas menú nav-bar">
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/bloqueado.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/bloqueado.jsp" afterDir="false" />
+    <list default="true" id="bccc322f-4ef6-4685-8453-ed1e0d6fd345" name="Changes" comment="Cambios para volver al anterior">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/capacitacion.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/capacitacion.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/footer.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/footer.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/header.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/header.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/listaCapacitaciones.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/listaCapacitaciones.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/login.jsp" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +155,7 @@
       <workItem from="1689812752485" duration="9098000" />
       <workItem from="1689894993382" duration="11604000" />
       <workItem from="1689907827007" duration="835000" />
-      <workItem from="1689980999111" duration="2655000" />
+      <workItem from="1689980999111" duration="4984000" />
     </task>
     <task id="LOCAL-00001" summary="Resolucion de conflictos">
       <option name="closed" value="true" />
@@ -213,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1689907801269</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Cambios para volver al anterior">
+      <option name="closed" value="true" />
+      <created>1689984290853</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1689984290854</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -248,6 +256,7 @@
     <MESSAGE value="Modificaciones varias" />
     <MESSAGE value="Modificaciones varias para sessiones" />
     <MESSAGE value="Resolución problemas menú nav-bar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Resolución problemas menú nav-bar" />
+    <MESSAGE value="Cambios para volver al anterior" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios para volver al anterior" />
   </component>
 </project>
