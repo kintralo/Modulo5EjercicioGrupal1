@@ -21,11 +21,7 @@
           integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
     <link rel="stylesheet" href="./css/style.css">
-    <%
-        session = request.getSession();
-        if (session == null) {
-            response.sendRedirect("index.jsp");
-        }%>
+
 </head>
 <body>
 
@@ -33,6 +29,11 @@
     <jsp:param name='title' value='Welcome'/>
 </jsp:include>
 <jsp:include page='modalCapacitacion.jsp' flush="true"/>
+
+<%
+    if (request.getSession() == null) {
+        response.sendRedirect("index.jsp");
+    }%>
 
 
 <div class="container mt-3">
