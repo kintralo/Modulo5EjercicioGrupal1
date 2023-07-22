@@ -23,8 +23,8 @@
             if (request.getSession() != null) {
 
         %>
-        <form action="servlet-cerrar-sesion" method="POST" class="d-flex" role="search">
-            <button class="btn btn-outline-success float-end" type="submit">Cerrar Sesión</button>
+        <form action="servlet-cerrar-sesion" method="POST" class="justify-content-end" role="search">
+            <button class="btn btn-outline-success " type="submit">Cerrar Sesión</button>
         </form>
         <%
         } else {%>
