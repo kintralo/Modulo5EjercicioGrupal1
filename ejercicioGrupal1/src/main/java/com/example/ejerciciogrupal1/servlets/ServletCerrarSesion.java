@@ -25,9 +25,9 @@ public class ServletCerrarSesion extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession(); // Obtener la sesión actual
 
-        if (session != null) {
-            session.invalidate(); // Invalidar la sesión actual del usuario
-        }
+
+            request.getSession().invalidate(); // Invalidar la sesión actual del usuario
+
 
         response.sendRedirect("login.jsp"); // Redireccionar el usuario al sitio de inicio de sesión
     }

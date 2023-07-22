@@ -14,27 +14,17 @@
     <meta charset="ISO-8859-1">
     <title>Contacto</title>
 
-
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
-
-
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-
-    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
-
-    <link
-            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-            rel="stylesheet"
-            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
-            crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+          integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <!--link de bootstrap y de dataTable-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
     <link rel="stylesheet" href="./css/style.css">
     <%
         session = request.getSession();
-        if(session.getAttribute("sesion")!="true"){
-    %>
-    response.sendRedirect("index.jsp");
-    <%
+        if (session == null) {
+            response.sendRedirect("index.jsp");
         }%>
 </head>
 <body>
@@ -50,28 +40,28 @@
         <div class="col-md-12">
             <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal"
                     data-bs-target="#crearCapacitacion">
-                Crear CapacitaciÃ³n
+                Crear Capacitación
             </button>
         </div>
     </div>
 </div>
 
-<div class="container mt-3">
+<div class="container">
     <div class="row">
         <h1 class="mt-3" style='text-align: center'>Listado de Capacitaciones</h1>
         <div class="table-responsive">
             <table id="tablaCapacitaciones" class="table" action="servlet-capacitacion" method="DELETE">
                 <thead>
                 <tr>
-                    <th scope="col">Codigo CapacitaciÃ³n</th>
+                    <th scope="col">Codigo Capacitación</th>
                     <th scope="col">Rut</th>
-                    <th scope="col">DÃ­a</th>
+                    <th scope="col">Día</th>
                     <th scope="col">Hora</th>
-                    <th scope="col">Lugar CapacitaciÃ³n</th>
-                    <th scope="col">DuraciÃ³n CapacitaciÃ³n</th>
+                    <th scope="col">Lugar Capacitación</th>
+                    <th scope="col">Duración Capacitación</th>
                     <th scope="col">Cantidad Asistentes</th>
-                    <th scope="col"><b>BotÃ³n</b></th>
-                    <th scope="col"><b>BotÃ³n</b></th>
+                    <th scope="col"><b>Botón</b></th>
+                    <th scope="col"><b>Botón</b></th>
                 </tr>
                 </thead>
                 <tbody>
@@ -104,10 +94,10 @@
 
             <script>
                 function eliminarCapacitacion(identificador) {
-                    if (confirm('Â¿EstÃ¡ seguro que desea eliminar la capacitaciÃ³n ' + identificador + '?')) {
-                        // hacer una llamada AJAX para eliminar la capacitaciÃ³n de la lista
-                        // por ejemplo, podrÃ­amos enviar una solicitud POST al servlet que maneja la eliminaciÃ³n de capacitaciones
-                        // despuÃ©s de eliminar la capacitaciÃ³n, volver a cargar la pÃ¡gina para actualizar la tabla
+                    if (confirm('¿Está seguro que desea eliminar la capacitación ' + identificador + '?')) {
+                        // hacer una llamada AJAX para eliminar la capacitación de la lista
+                        // por ejemplo, podríamos enviar una solicitud POST al servlet que maneja la eliminación de capacitaciones
+                        // después de eliminar la capacitación, volver a cargar la página para actualizar la tabla
                         window.location.reload();
                     }
                 }
@@ -128,18 +118,30 @@
 </jsp:include>
 
 
-<script
-        src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-        crossorigin="anonymous"></script>
-<script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"
-        integrity="sha384-fbbOQedDUMZZ5KreZpsbe1LCZPVmfTnH7ois6mU1QK+m14rQ1l2bGBq41eYeM/fS"
-        crossorigin="anonymous"></script>
-<script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
-        crossorigin="anonymous"></script>
+<script>
+    $(document).ready(function () {
+        // Inicializar DataTable
+        $(".table").DataTable();
+    });
+</script>
+
+<!-- Optional JavaScript; choose one of the two! -->
+
+<!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+
+<!-- Option 2: Separate Popper and Bootstrap JS -->
+<!--
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+-->
+
+<!--Script de JQuery-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<!--Script del plugin dataTable-->
+<script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>
 
 </body>
 </html>
@@ -150,10 +152,4 @@
     myModal.addEventListener('shown.bs.modal', () => {
         myInput.focus()
     })
-</script>
-<script>
-    $(document).ready(function () {
-        // Inicializar DataTable
-        $(".table").DataTable();
-    });
 </script>
