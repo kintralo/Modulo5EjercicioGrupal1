@@ -19,7 +19,7 @@ public class Capacitacion {
     private String dia;
     private LocalTime hora;
     private String lugar;
-    private String duracion;
+    private LocalTime duracion;
     private int cantAsistentes;
 
     /**
@@ -39,7 +39,7 @@ public class Capacitacion {
      * @param cantAsistentes
      */
 
-    public Capacitacion(int identificador, int rut, String dia, LocalTime hora, String lugar, String duracion, int cantAsistentes) {
+    public Capacitacion(int identificador, int rut, String dia, LocalTime hora, String lugar, LocalTime duracion, int cantAsistentes) {
         this.identificador = identificador;
         this.rut = rut;
         this.dia = dia;
@@ -122,14 +122,14 @@ public class Capacitacion {
     /**
      * @return duracion
      */
-    public String getDuracion() {
+    public LocalTime getDuracion() {
         return this.duracion;
     }
 
     /**
      * @param duracion
      */
-    public void setDuracion(String duracion) {
+    public void setDuracion(LocalTime duracion) {
         this.duracion = duracion;
     }
 
