@@ -28,4 +28,4 @@
         </div>
     </div>
 </footer>
-<jsp:include page='modalLogin.jsp' flush="true"/>
+
