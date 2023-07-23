@@ -1,5 +1,7 @@
 package com.example.ejerciciogrupal1.servlets;
 
+import com.example.ejerciciogrupal1.conexion.Conexion;
+import com.example.ejerciciogrupal1.dao.CapacitacionDAO;
 import com.example.ejerciciogrupal1.models.Capacitacion;
 import jakarta.servlet.RequestDispatcher;
 import jakarta.servlet.ServletException;
@@ -9,6 +11,11 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,14 +24,15 @@ import java.util.List;
 @WebServlet(name = "servletCapacitacion", value = "/servlet-capacitacion")
 public class ServletCapacitacion extends HttpServlet {
 
-   private ArrayList<Capacitacion> listaCapacitaciones = new ArrayList<Capacitacion>();
+    private ArrayList<Capacitacion> listaCapacitaciones = new ArrayList<Capacitacion>();
+    private CapacitacionDAO capacitacionDAO = new CapacitacionDAO();
 
     private static final long serialVersionUID = 1L;
+
     public ServletCapacitacion() {
     }
 
     /**
-     *
      * @param request
      * @param response
      * @throws ServletException
@@ -32,23 +40,10 @@ public class ServletCapacitacion extends HttpServlet {
      */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        /**request.setAttribute("codigoCapacitacion", request.getParameter("txtCodigoCapacitacion"));
-        request.setAttribute("Rut", request.getParameter("txtRut"));
-        request.setAttribute("Dia", request.getParameter("txtDia"));
-        request.setAttribute("Hora", request.getParameter("txtHora"));
-        request.setAttribute("duracionCapacitacion", request.getParameter("txtDuracion"));
-        request.setAttribute("cantidadAsistentes", request.getParameter("asistentes"));
-        request.setAttribute("lugarCapacitacion", request.getParameter("txtLugarCapacitacion"));
-       // RequestDispatcher rd = request.getRequestDispatcher("capacitacion.jsp");
-        RequestDispatcher rd = request.getRequestDispatcher("listaCapacitaciones.jsp");
-        rd.forward(request,  response);
-
-        String dato = request.getParameter("dato");
-        listaDatos.add(dato);*/
 
         int identificador = Integer.parseInt(request.getParameter("txtCodigoCapacitacion"));
-        int run = Integer.parseInt(request.getParameter("txtRut"));
-        String dia =  request.getParameter("txtDia");
+        int rut = Integer.parseInt(request.getParameter("txtRut"));
+        String dia = request.getParameter("txtDia");
         String horaIngresada = request.getParameter("txtHora");
         LocalTime hora = LocalTime.parse(horaIngresada);
         String lugar = request.getParameter("txtLugarCapacitacion");
@@ -56,19 +51,28 @@ public class ServletCapacitacion extends HttpServlet {
         LocalTime duracion = LocalTime.parse(duracionIngresada);
         int cantAsistentes = Integer.parseInt(request.getParameter("txtAsistentes"));
 
-        Capacitacion capacitacion = new Capacitacion(identificador, run, dia, hora, lugar, duracion, cantAsistentes);
+        Capacitacion capacitacion = new Capacitacion(identificador, rut, dia, hora, lugar, duracion, cantAsistentes);
 
-        listaCapacitaciones.add(capacitacion);
+        try {
+            if (capacitacionDAO.createCapacitacion(capacitacion)) {
+                System.out.printf("¡Capacitación Creada correctamente!");
+            }
+            //Sí no esta
+            List<Capacitacion> listaCapacitacion = capacitacionDAO.listaCapacitaciones();
+            if (!listaCapacitacion.isEmpty()) {
+                //listaCapacitacion.add(capacitacion);
+                request.setAttribute("listaCapacitaciones", listaCapacitacion);
+                request.getRequestDispatcher("listaCapacitaciones.jsp").forward(request, response); // enviar la solicitud y la respuesta al archivo JSP "tabla.jsp"
+                System.out.printf("¡Lista de Capacitaciones mostrada correctamente!");
+            }
 
-        request.setAttribute("listaCapacitaciones", listaCapacitaciones);
-        //RequestDispatcher rd = request.getRequestDispatcher("listaCapacitaciones.jsp");
-        //rd.forward(request,  response);// enviar la solicitud y la respuesta al archivo JSP "tabla.jsp"
-        request.getRequestDispatcher("listaCapacitaciones.jsp").forward(request, response); // enviar la solicitud y la respuesta al archivo JSP "tabla.jsp"
+        } catch (Exception e) {
+            System.out.println("Error: doPost ServletCapacitaciones");
+        }
 
     }
 
     /**
-     *
      * @param request
      * @param response
      * @throws ServletException
@@ -80,7 +84,6 @@ public class ServletCapacitacion extends HttpServlet {
     }
 
     /**
-     *
      * @param request
      * @param response
      * @throws ServletException
@@ -95,7 +98,7 @@ public class ServletCapacitacion extends HttpServlet {
 
         // eliminar la capacitación correspondiente de la lista
         for (Capacitacion capacitacion : listaCapacitaciones) {
-            if (capacitacion.getIdentificador() == identificador ) {
+            if (capacitacion.getIdentificador() == identificador) {
                 listaCapacitaciones.remove(capacitacion);
                 break;
             }
