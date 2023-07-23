@@ -15,7 +15,7 @@ public class CapacitacionDAO implements ICapacitacion {
     private Statement statement = null;
     private Connection connection = null;
 
-    private ResultSet resultSet;
+    private ResultSet resultSet = null;
 
     @Override
     public boolean createCapacitacion(Capacitacion capacitacion) throws Exception {
@@ -50,16 +50,18 @@ public class CapacitacionDAO implements ICapacitacion {
 
     @Override
     public List<Capacitacion> listaCapacitaciones() {
-        String sql = "SELECT *FROM Capacitaciones ORDER BY identificador ";
+        String sql = "SELECT * FROM Capacitaciones";
         List<Capacitacion> capacitacionList = new ArrayList<Capacitacion>();
         //Creación de try
         try {
             connection = Conexion.conectar();//Agregar los datos de la conexión
             statement = connection.createStatement();
-            statement.execute(sql);//Agregar la consulta para registrar
+            resultSet = statement.executeQuery(sql);//Agregar la consulta para registrar
+
             while (resultSet.next()) {
                 //Creación de un objeto para agregarlo a la lista
                 Capacitacion capacitacion = new Capacitacion();
+                //Obtencion de datos de la tabla campo por campo
                 capacitacion.setIdentificador(resultSet.getInt(1));
                 capacitacion.setRut(resultSet.getInt(2));
                 capacitacion.setDia(resultSet.getString(3));
@@ -69,7 +71,8 @@ public class CapacitacionDAO implements ICapacitacion {
                 capacitacion.setCantAsistentes(resultSet.getInt(7));
                 capacitacionList.add(capacitacion);//Guardar los datos a lista
             }
-            statement.close();// Cerrar declacaració
+            resultSet.close();// Cerrar resultset
+            statement.close();// Cerrar declacaración
             connection.close();// Cerrar conexión-
         } catch (SQLException e) {
             System.out.println("Error: listaCapacitaciones");

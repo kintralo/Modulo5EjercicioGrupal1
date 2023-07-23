@@ -27,13 +27,13 @@
                 <div class="form-group">
                     <label for="username">Usuario:</label>
                     <input type="text" class="form-control" id="username" placeholder="Ingrese usuario"
-                           name="txtUserName" required>
+                           name="txtUserName" value="admin" required>
                     <div class="invalid-feedback">Campo obligatorio</div>
                 </div>
                 <div class="form-group">
                     <label for="password">Contraseña:</label>
                     <input type="password" class="form-control" id="password" placeholder="Ingrese contraseña"
-                           name="txtPassword" required>
+                           name="txtPassword" value="1234"required>
                     <div class="invalid-feedback">Campo obligatorio</div>
                 </div>
                 <button type="submit" class="btn btn-primary">Ingresar</button>
