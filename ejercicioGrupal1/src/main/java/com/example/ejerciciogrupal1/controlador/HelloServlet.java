@@ -1,4 +1,4 @@
-package com.example.ejerciciogrupal1.servlets;
+package com.example.ejerciciogrupal1.controlador;
 
 import java.io.*;
 
