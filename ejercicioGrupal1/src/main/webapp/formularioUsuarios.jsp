@@ -55,5 +55,5 @@
         <div class="invalid-feedback">Campo obligatorio</div>
     </div>
 
-    <button type="submit" class="btn btn-primary mt-5">Guardar</button>
+    <button type="submit" class="btn btn-primary form-control mt-5">Guardar</button>
 </form>
