@@ -15,13 +15,14 @@ import java.util.List;
 public class UsuarioDao implements IUsuario {
 
     private Statement statement = null;
-    private Connection connection= null;
-    private ResultSet resultSet=  null;
+    private Connection connection = null;
+    private ResultSet resultSet = null;
+
     @Override
     public boolean createUsuario(Usuario usuario) throws Exception {
         boolean registar = false;
-        String sql=" INSERT INTO usuarios (nombre, tipo) VALUES ('" +usuario.getNombre()+
-                usuario.getTipo()+"')";
+        String sql = " INSERT INTO usuarios (nombre, tipo) VALUES ('" + usuario.getNombre() + "', '" +
+                usuario.getTipo() + "')";
         //Creación de try
         try {
             connection = Conexion.conectar();//Agregar los datos de la conexión
@@ -31,7 +32,7 @@ public class UsuarioDao implements IUsuario {
             statement.close();// Cerrar declacaració
             connection.close();// Cerrar conexión-
         } catch (SQLException e) {
-            System.out.println("Error: createCapacitacion");
+            System.out.println("Error: createUsuario");
             e.printStackTrace();
         }
         return registar;
@@ -39,8 +40,8 @@ public class UsuarioDao implements IUsuario {
 
     @Override
     public List<Usuario> listaUsuarios() throws Exception {
-        String sql="SELECT *FROM usuarios";
-        List<Usuario> usuarioList =new ArrayList<Usuario>();
+        String sql = "SELECT * FROM usuarios";
+        List<Usuario> usuarioList = new ArrayList<Usuario>();
         //Creación de try
         try {
             connection = Conexion.conectar();//Agregar los datos de la conexión

@@ -8,13 +8,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
-<form action="servlet-capacitacion" method="POST" class="was-validated">
-    <div class="form-group">
-        <label for="lblRut" class="form-label"><b>Rut</b></label>
-        <input type="number" class="form-control" id="" name="txtRut"
-               placeholder="Ingrese el Rut" value="103988" required>
-        <div class="invalid-feedback">Campo obligatorio</div>
-    </div>
+<form action="servlet-usuario" method="POST" class="was-validated">
+
     <div class="form-group">
         <label for="lblNombres" class="form-label">
             <b>Nombres</b>
@@ -24,23 +19,7 @@
                required>
         <div class="invalid-feedback">Campo obligatorio</div>
     </div>
-    <div class="form-group">
-        <label for="lblApellidos" class="form-label">
-            <b>Apellidos</b>
-        </label>
-        <input type="txt" class="form-control" id="" name="txtDia"
-               placeholder="Ingrese el Día" value="Vásquez Sokolov" required>
-        <div class="invalid-feedback">Campo obligatorio</div>
-    </div>
 
-    <div class="form-group">
-        <label for="lblFechaNacimiento" class="form-label">
-            <b>Fecha Nacimiento</b>
-        </label>
-        <input type="date" class="form-control" id=""
-               name="txtFechaNacimiento" required>
-        <div class="invalid-feedback">Campo obligatorio</div>
-    </div>
 
     <div class="form-group">
         <label for="lblTipoUsuario" class="form-label">

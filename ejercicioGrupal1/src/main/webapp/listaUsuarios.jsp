@@ -42,7 +42,7 @@
     <div class="row">
         <div class="col-md-12">
             <button type="button" class="btn btn-primary float-end" data-bs-toggle="modal"
-                    data-bs-target="#crearCapacitacion">
+                    data-bs-target="#crearUsuario">
                 <b>Crear Usuario</b>
             </button>
         </div>
@@ -54,29 +54,21 @@
         <div class="col-md-12">
             <h1 class="mt-3" style='text-align: center'>Lista de Usuarios</h1>
             <div class="table-responsive">
-                <table id="tablaCapacitaciones" class="table" action="servlet-capacitacion" method="DELETE">
+                <table id="tablaUsuarios" class="table" action="servlet-capacitacion" method="DELETE">
                     <thead>
                     <tr>
-                        <th scope="col">Codigo Capacitación</th>
                         <th scope="col">Nombres</th>
-                        <th scope="col">Apellidos</th>
-                        <th scope="col">fechaNacimiento</th>
-                        <th scope="col">Edad</th>
+                        <th scope="col">Tipo</th>
                         <th scope="col"><b>Botón</b></th>
                         <th scope="col"><b>Botón</b></th>
                     </tr>
                     </thead>
                     <tbody>
 
-                    <c:forEach items="${listaCapacitaciones}" var="capacitacion">
+                    <c:forEach items="${listaUsuarios}" var="usuario">
                         <tr>
-                            <td>${capacitacion.identificador}</td>
-                            <td>${capacitacion.rut}</td>
-                            <td>${capacitacion.dia}</td>
-                            <td>${capacitacion.hora}</td>
-                            <td>${capacitacion.lugar}</td>
-                            <td>${capacitacion.duracion}</td>
-                            <td>${capacitacion.cantAsistentes}</td>
+                            <td>${usuario.nombre}</td>
+                            <td>${usuario.tipo}</td>
                             <td>
                                 <button type="button" class="btn btn-warning ">
                                     <b>Actualizar</b>
