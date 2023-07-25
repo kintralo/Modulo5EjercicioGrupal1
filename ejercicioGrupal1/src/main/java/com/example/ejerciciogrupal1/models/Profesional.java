@@ -31,21 +31,6 @@ public class Profesional extends Usuario {
         this.fechaIngreso = fechaIngreso;
     }
 
-    /**
-     * @param run
-     * @param nombre
-     * @param apellidos
-     * @param fechaNacimiento
-     * @param edad
-     * @param titulo
-     * @param fechaIngreso
-     */
-    public Profesional(int run, String nombre, String apellidos, LocalDate fechaNacimiento, Integer edad, String titulo,
-                       LocalDate fechaIngreso) {
-        super(run, nombre, apellidos, fechaNacimiento, edad);
-        this.titulo = titulo;
-        this.fechaIngreso = fechaIngreso;
-    }
 
     /**
      * @return titulo
@@ -81,13 +66,11 @@ public class Profesional extends Usuario {
     @Override
     public String toString() {
         return "Profesional{" +
-                ", run=" + run +
-                ", nombre='" + nombre +
-                ", apellidos='" + apellidos +
-                ", fechaNacimiento=" + fechaNacimiento +
-                ", edad=" + edad +
-                "titulo='" + titulo +
+                "titulo='" + titulo + '\'' +
                 ", fechaIngreso=" + fechaIngreso +
+                ", run=" + run +
+                ", nombre='" + nombre + '\'' +
+                ", tipo='" + tipo + '\'' +
                 '}';
     }
 }

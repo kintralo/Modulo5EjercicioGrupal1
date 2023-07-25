@@ -33,17 +33,8 @@ public class Administrativo extends Usuario {
         this.experienciaPrevia = experienciaPrevia;
     }
 
-    /**
-     * @param run
-     * @param nombre
-     * @param apellidos
-     * @param fechaNacimiento
-     * @param edad
-     * @param area
-     * @param experienciaPrevia
-     */
-    public Administrativo(int run, String nombre, String apellidos, LocalDate fechaNacimiento, Integer edad, String area, String experienciaPrevia) {
-        super(run, nombre, apellidos, fechaNacimiento, edad);
+    public Administrativo(int run, String nombre, String tipo, String area, String experienciaPrevia) {
+        super(run, nombre, tipo);
         this.area = area;
         this.experienciaPrevia = experienciaPrevia;
     }
@@ -76,17 +67,14 @@ public class Administrativo extends Usuario {
         this.experienciaPrevia = experienciaPrevia;
     }
 
-
     @Override
     public String toString() {
         return "Administrativo{" +
+                "area='" + area + '\'' +
+                ", experienciaPrevia='" + experienciaPrevia + '\'' +
                 ", run=" + run +
-                ", nombre='" + nombre +
-                ", apellidos='" + apellidos +
-                ", fechaNacimiento=" + fechaNacimiento +
-                ", edad=" + edad +
-                "area='" + area +
-                ", experienciaPrevia='" + experienciaPrevia +
+                ", nombre='" + nombre + '\'' +
+                ", tipo='" + tipo + '\'' +
                 '}';
     }
 }
