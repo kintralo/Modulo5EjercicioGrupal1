@@ -1,7 +1,6 @@
 package com.example.ejerciciogrupal1.controlador;
 
-import com.example.ejerciciogrupal1.conexion.Conexion;
-import com.example.ejerciciogrupal1.dao.CapacitacionDAO;
+import com.example.ejerciciogrupal1.implementacion.CapacitacionDAO;
 import com.example.ejerciciogrupal1.models.Capacitacion;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -10,10 +9,6 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;

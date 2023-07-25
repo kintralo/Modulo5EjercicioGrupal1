@@ -1,6 +1,6 @@
 package com.example.ejerciciogrupal1.controlador;
 
-import com.example.ejerciciogrupal1.dao.UsuarioDao;
+import com.example.ejerciciogrupal1.implementacion.UsuarioDao;
 import com.example.ejerciciogrupal1.models.Usuario;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -55,7 +55,7 @@ public class ServletUsuario extends HttpServlet {
             //listaCapacitacion.add(capacitacion);
             request.setAttribute("listaUsuarios", usuarioList);
             request.getRequestDispatcher("listaUsuarios.jsp").forward(request, response); // enviar la solicitud y la respuesta al archivo JSP "tabla.jsp"
-            System.out.printf("¡Lista de Capacitaciones mostrada correctamente!");
+            System.out.printf("¡Lista de Usuarios mostrada correctamente!");
         }
     }
 }
