@@ -57,6 +57,7 @@
                 <table id="tablaUsuarios" class="table" action="servlet-capacitacion" method="DELETE">
                     <thead>
                     <tr>
+                        <th scope="col">Código</th>
                         <th scope="col">Nombres</th>
                         <th scope="col">Tipo</th>
                         <th scope="col"><b>Botón</b></th>
@@ -67,6 +68,7 @@
 
                     <c:forEach items="${listaUsuarios}" var="usuario">
                         <tr>
+                            <td>${usuario.id_usuario}</td>
                             <td>${usuario.nombre}</td>
                             <td>${usuario.tipo}</td>
                             <td>
