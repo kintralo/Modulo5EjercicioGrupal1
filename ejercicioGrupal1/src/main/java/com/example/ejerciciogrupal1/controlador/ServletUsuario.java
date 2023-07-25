@@ -35,7 +35,7 @@ public class ServletUsuario extends HttpServlet {
                 //listaCapacitacion.add(capacitacion);
                 request.setAttribute("listaUsuarios", usuarioList);
                 request.getRequestDispatcher("listaUsuarios.jsp").forward(request, response); // enviar la solicitud y la respuesta al archivo JSP "tabla.jsp"
-                System.out.printf("¡Lista de Capacitaciones mostrada correctamente!");
+                System.out.printf("¡Lista de Usuarios mostrada correctamente!");
             }
         } catch (Exception e) {
             System.out.println("Error: doPost ServletUsuario");
