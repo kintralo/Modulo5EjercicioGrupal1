@@ -24,6 +24,8 @@ public class Usuario {
     }
 
     /**
+     *
+     * @param id_usuario
      * @param nombre
      * @param tipo
      */
@@ -34,6 +36,15 @@ public class Usuario {
         this.tipo = tipo;
     }
 
+    /**
+     *
+     * @param nombre
+     * @param tipo
+     */
+    public Usuario( String nombre, String tipo) {
+        this.nombre = nombre;
+        this.tipo = tipo;
+    }
     /**
      * @return nombre
      */
