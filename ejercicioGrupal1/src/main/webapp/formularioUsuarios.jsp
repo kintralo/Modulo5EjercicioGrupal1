@@ -46,7 +46,7 @@
         <label for="lblTipoUsuario" class="form-label">
             <b>Tipo Usuario</b>
         </label>
-        <select class="form-select" aria-label="Default select example">
+        <select class="form-select" aria-label="Default select example" name="txtTipoUsuario">
             <option selected>Selecciones un Usuario</option>
             <option value="Administrativo"><b>Administrativo</b></option>
             <option value="Cliente"><b>Cliente</b></option>
