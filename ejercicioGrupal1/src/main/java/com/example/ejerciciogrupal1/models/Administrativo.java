@@ -1,6 +1,5 @@
 package com.example.ejerciciogrupal1.models;
 
-import java.time.LocalDate;
 /**
  * @author  Juan Pablo Vásquez
  * Ándres Tapia
@@ -33,8 +32,16 @@ public class Administrativo extends Usuario {
         this.experienciaPrevia = experienciaPrevia;
     }
 
-    public Administrativo( String nombre, String tipo, String area, String experienciaPrevia) {
-        super( nombre, tipo);
+    /**
+     *
+     * @param id_usuario
+     * @param nombre
+     * @param tipo
+     * @param area
+     * @param experienciaPrevia
+     */
+    public Administrativo(Long id_usuario, String nombre, String tipo, String area, String experienciaPrevia) {
+        super(id_usuario, nombre, tipo);
         this.area = area;
         this.experienciaPrevia = experienciaPrevia;
     }
@@ -72,6 +79,7 @@ public class Administrativo extends Usuario {
         return "Administrativo{" +
                 "area='" + area + '\'' +
                 ", experienciaPrevia='" + experienciaPrevia + '\'' +
+                ", id_usuario=" + id_usuario +
                 ", nombre='" + nombre + '\'' +
                 ", tipo='" + tipo + '\'' +
                 '}';
