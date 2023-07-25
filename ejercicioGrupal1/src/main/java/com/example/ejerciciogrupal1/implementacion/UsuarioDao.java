@@ -17,6 +17,12 @@ public class UsuarioDao implements IUsuario {
     private Connection connection = null;
     private ResultSet resultSet = null;
 
+    /**
+     *
+     * @param usuario
+     * @return
+     * @throws Exception
+     */
     @Override
     public boolean createUsuario(Usuario usuario) throws Exception {
         boolean registar = false;
@@ -37,9 +43,25 @@ public class UsuarioDao implements IUsuario {
         return registar;
     }
 
+    /**
+     *
+     * @param usuario
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public boolean updateUsuario(Usuario usuario) throws Exception {
+        return false;
+    }
+
+    /**
+     *
+     * @return
+     * @throws Exception
+     */
     @Override
     public List<Usuario> listaUsuarios() throws Exception {
-        String sql = "SELECT nombre,tipo FROM usuarios";
+        String sql = "SELECT * FROM usuarios";
         List<Usuario> usuarioList = new ArrayList<Usuario>();
         //Creación de try
         try {
@@ -51,8 +73,9 @@ public class UsuarioDao implements IUsuario {
                 //Creación de un objeto para agregarlo a la lista
                 Usuario usuario = new Usuario();
                 //Obtencion de datos de la tabla campo por campo
-                usuario.setNombre(resultSet.getString(1));
-                usuario.setTipo(resultSet.getString(2));
+                usuario.setId_usuario(resultSet.getLong(1));
+                usuario.setNombre(resultSet.getString(2));
+                usuario.setTipo(resultSet.getString(3));
                 usuarioList.add(usuario);//Guardar los datos a lista
             }
             resultSet.close();// Cerrar resultset
@@ -63,5 +86,16 @@ public class UsuarioDao implements IUsuario {
             e.printStackTrace();
         }
         return usuarioList;
+    }
+
+    /**
+     *
+     * @param usuario
+     * @return
+     * @throws Exception
+     */
+    @Override
+    public boolean eliminarUsuario(Usuario usuario) throws Exception {
+        return false;
     }
 }
