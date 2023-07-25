@@ -45,6 +45,23 @@ public class Usuario {
         this.nombre = nombre;
         this.tipo = tipo;
     }
+
+    /**
+     *
+     * @return
+     */
+    public Long getId_usuario() {
+        return id_usuario;
+    }
+
+    /**
+     *
+     * @param id_usuario
+     */
+    public void setId_usuario(Long id_usuario) {
+        this.id_usuario = id_usuario;
+    }
+
     /**
      * @return nombre
      */
