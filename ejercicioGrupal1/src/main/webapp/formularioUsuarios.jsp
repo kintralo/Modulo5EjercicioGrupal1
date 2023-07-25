@@ -15,7 +15,7 @@
             <b>Nombres</b>
         </label>
         <input type="text" class="form-control" id=""
-               name="txtNombres" value="Anastasia Elizabeth " autofocus="autofocus"
+               name="txtNombres" autofocus="autofocus"
                required>
         <div class="invalid-feedback">Campo obligatorio</div>
     </div>
