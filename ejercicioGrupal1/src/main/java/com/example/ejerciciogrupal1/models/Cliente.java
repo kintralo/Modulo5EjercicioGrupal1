@@ -42,7 +42,7 @@ public class Cliente extends Usuario {
 
     /**
      *
-     * @param run
+     * @param id_usuario
      * @param nombre
      * @param tipo
      * @param telefono
@@ -51,9 +51,8 @@ public class Cliente extends Usuario {
      * @param direccion
      * @param comuna
      */
-
-    public Cliente(String nombre, String tipo, int telefono, String afp, int sistemaSalud, String direccion, String comuna) {
-        super( nombre, tipo);
+    public Cliente(Long id_usuario, String nombre, String tipo, int telefono, String afp, int sistemaSalud, String direccion, String comuna) {
+        super(id_usuario, nombre, tipo);
         this.telefono = telefono;
         this.afp = afp;
         this.sistemaSalud = sistemaSalud;
@@ -139,11 +138,11 @@ public class Cliente extends Usuario {
                 ", sistemaSalud=" + sistemaSalud +
                 ", direccion='" + direccion + '\'' +
                 ", comuna='" + comuna + '\'' +
+                ", id_usuario=" + id_usuario +
                 ", nombre='" + nombre + '\'' +
                 ", tipo='" + tipo + '\'' +
                 '}';
     }
-
 
     /**
      * metodo SistemaSalud

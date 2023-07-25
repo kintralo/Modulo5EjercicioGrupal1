@@ -13,6 +13,7 @@ package com.example.ejerciciogrupal1.models;
  */
 public class Usuario {
     //Definición de atributos
+    protected Long id_usuario;
     protected String nombre;
     protected String tipo;
 
@@ -26,9 +27,11 @@ public class Usuario {
      * @param nombre
      * @param tipo
      */
-    public Usuario( String nombre, String tipo) {
+
+    public Usuario(Long id_usuario, String nombre, String tipo) {
+        this.id_usuario = id_usuario;
         this.nombre = nombre;
-        this.tipo= tipo;
+        this.tipo = tipo;
     }
 
     /**
