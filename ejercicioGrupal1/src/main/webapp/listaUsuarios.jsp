@@ -37,6 +37,7 @@
 
 <jsp:include page='header.jsp'/>
 <jsp:include page='modalUsuario.jsp' flush="true"/>
+<jsp:include page='modalEditarUsuario.jsp' flush="true"/>
 
 <div class="container mt-3">
     <div class="row">
@@ -72,14 +73,17 @@
                             <td>${usuario.nombre}</td>
                             <td>${usuario.tipo}</td>
                             <td>
-                                <button type="button" class="btn btn-warning ">
+                                <button type="button" class="btn btn-warning " data-bs-toggle="modal"
+                                        data-bs-target="#editarUsuario">
                                     <b>Actualizar</b>
                                 </button>
                             </td>
 
                             <td>
-                                <input type="button" class="btn btn-danger " value="Eliminar"
-                                       onclick="eliminarCapacitacion('${capacitacion.identificador}')"/>
+                                <button type="button" class="btn btn-danger" data-toggle="modal"
+                                        data-target="#editarUsuario${usuario.id_usuario}">
+                                    Eliminar
+                                </button>
                             </td>
                         </tr>
                     </c:forEach>
