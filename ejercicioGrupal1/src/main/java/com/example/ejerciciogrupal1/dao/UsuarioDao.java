@@ -21,8 +21,8 @@ public class UsuarioDao implements IUsuario {
     @Override
     public boolean createUsuario(Usuario usuario) throws Exception {
         boolean registar = false;
-        String sql = " INSERT INTO usuarios (nombre, tipo) VALUES ('" + usuario.getNombre() + "', '" +
-                usuario.getTipo() + "')";
+        String sql = " INSERT INTO usuarios (nombre, tipo) VALUES ('" + usuario.getNombre() +
+                "', '" + usuario.getTipo() + "')";
         //Creación de try
         try {
             connection = Conexion.conectar();//Agregar los datos de la conexión
@@ -40,7 +40,7 @@ public class UsuarioDao implements IUsuario {
 
     @Override
     public List<Usuario> listaUsuarios() throws Exception {
-        String sql = "SELECT * FROM usuarios";
+        String sql = "SELECT nombre,tipo FROM usuarios";
         List<Usuario> usuarioList = new ArrayList<Usuario>();
         //Creación de try
         try {
