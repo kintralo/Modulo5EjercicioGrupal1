@@ -18,7 +18,7 @@
                 </li>
                 <li class="nav-item"><a class="nav-link" href="/ejercicioGrupal1_war/servlet-capacitacion"><b>Capacitaciones</b></a>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="listaUsuarios.jsp"><b>Usuarios</b></a>
+                <li class="nav-item"><a class="nav-link" href="/ejercicioGrupal1_war/servlet-usuario"><b>Usuarios</b></a>
                 </li>
                 <!--
                 <li class="nav-item dropdown">
