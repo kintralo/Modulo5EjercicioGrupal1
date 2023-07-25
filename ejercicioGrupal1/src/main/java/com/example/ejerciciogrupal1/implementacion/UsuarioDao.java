@@ -1,8 +1,7 @@
-package com.example.ejerciciogrupal1.dao;
+package com.example.ejerciciogrupal1.implementacion;
 
 import com.example.ejerciciogrupal1.conexion.Conexion;
 import com.example.ejerciciogrupal1.interfaces.IUsuario;
-import com.example.ejerciciogrupal1.models.Capacitacion;
 import com.example.ejerciciogrupal1.models.Usuario;
 
 import java.sql.Connection;
