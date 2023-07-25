@@ -52,8 +52,8 @@ public class Cliente extends Usuario {
      * @param comuna
      */
 
-    public Cliente(int run, String nombre, String tipo, int telefono, String afp, int sistemaSalud, String direccion, String comuna) {
-        super(run, nombre, tipo);
+    public Cliente(String nombre, String tipo, int telefono, String afp, int sistemaSalud, String direccion, String comuna) {
+        super( nombre, tipo);
         this.telefono = telefono;
         this.afp = afp;
         this.sistemaSalud = sistemaSalud;
@@ -139,7 +139,6 @@ public class Cliente extends Usuario {
                 ", sistemaSalud=" + sistemaSalud +
                 ", direccion='" + direccion + '\'' +
                 ", comuna='" + comuna + '\'' +
-                ", run=" + run +
                 ", nombre='" + nombre + '\'' +
                 ", tipo='" + tipo + '\'' +
                 '}';

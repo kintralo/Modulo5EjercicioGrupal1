@@ -1,5 +1,5 @@
 package com.example.ejerciciogrupal1.models;
-import java.time.LocalDate;
+
 /**
  * @author  Juan Pablo Vásquez
  * Ándres Tapia
@@ -13,7 +13,6 @@ import java.time.LocalDate;
  */
 public class Usuario {
     //Definición de atributos
-    protected int run;
     protected String nombre;
     protected String tipo;
 
@@ -24,28 +23,12 @@ public class Usuario {
     }
 
     /**
-     * @param run
      * @param nombre
      * @param tipo
      */
-    public Usuario(int run, String nombre, String tipo) {
-        this.run = run;
+    public Usuario( String nombre, String tipo) {
         this.nombre = nombre;
         this.tipo= tipo;
-    }
-
-    /**
-     * @return run
-     */
-    public int getRun() {
-        return this.run;
-    }
-
-    /**
-     * @param run
-     */
-    public void setRun(int run) {
-        this.run = run;
     }
 
     /**
@@ -76,7 +59,6 @@ public class Usuario {
     @Override
     public String toString() {
         return "Usuarios{" +
-                "run=" + run +
                 ", nombre='" + nombre + '\'' +
                 ", tipo='" + tipo + '\'' +
                 '}';

@@ -33,8 +33,8 @@ public class Administrativo extends Usuario {
         this.experienciaPrevia = experienciaPrevia;
     }
 
-    public Administrativo(int run, String nombre, String tipo, String area, String experienciaPrevia) {
-        super(run, nombre, tipo);
+    public Administrativo( String nombre, String tipo, String area, String experienciaPrevia) {
+        super( nombre, tipo);
         this.area = area;
         this.experienciaPrevia = experienciaPrevia;
     }
@@ -72,7 +72,6 @@ public class Administrativo extends Usuario {
         return "Administrativo{" +
                 "area='" + area + '\'' +
                 ", experienciaPrevia='" + experienciaPrevia + '\'' +
-                ", run=" + run +
                 ", nombre='" + nombre + '\'' +
                 ", tipo='" + tipo + '\'' +
                 '}';

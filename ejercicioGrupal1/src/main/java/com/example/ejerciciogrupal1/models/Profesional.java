@@ -31,6 +31,11 @@ public class Profesional extends Usuario {
         this.fechaIngreso = fechaIngreso;
     }
 
+    public Profesional( String nombre, String tipo, String titulo, LocalDate fechaIngreso) {
+        super( nombre, tipo);
+        this.titulo = titulo;
+        this.fechaIngreso = fechaIngreso;
+    }
 
     /**
      * @return titulo
@@ -68,7 +73,6 @@ public class Profesional extends Usuario {
         return "Profesional{" +
                 "titulo='" + titulo + '\'' +
                 ", fechaIngreso=" + fechaIngreso +
-                ", run=" + run +
                 ", nombre='" + nombre + '\'' +
                 ", tipo='" + tipo + '\'' +
                 '}';
