@@ -1,5 +1,5 @@
 package com.example.ejerciciogrupal1.implementacion;
-
+//Imports
 import com.example.ejerciciogrupal1.conexion.Conexion;
 import com.example.ejerciciogrupal1.interfaces.ICapacitacion;
 import com.example.ejerciciogrupal1.models.Capacitacion;
@@ -11,12 +11,29 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * @author  Juan Pablo Vásquez
+ * Ándres Tapia
+ * Victor Briso
+ * Sebastián Araya
+ * @version 1.0
+ */
+
+/**
+ * Clase  de acceso a datos CapacitacionDAO.
+ */
 public class CapacitacionDAO implements ICapacitacion {
     private Statement statement = null;
     private Connection connection = null;
 
     private ResultSet resultSet = null;
 
+    /***
+     *
+     * @param capacitacion
+     * @return
+     * @throws Exception
+     */
     @Override
     public boolean createCapacitacion(Capacitacion capacitacion) throws Exception {
         boolean registar = false;//Se incia en falso
@@ -43,11 +60,21 @@ public class CapacitacionDAO implements ICapacitacion {
         return registar;
     }
 
+    /**
+     *
+     * @param capacitacion
+     * @return
+     * @throws Exception
+     */
     @Override
     public boolean updateCapacitacion(Capacitacion capacitacion) throws Exception {
         return false;
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public List<Capacitacion> listaCapacitaciones() {
         String sql = "SELECT * FROM Capacitaciones";
@@ -81,6 +108,12 @@ public class CapacitacionDAO implements ICapacitacion {
         return capacitacionList;
     }
 
+    /**
+     *
+     * @param capacitacion
+     * @return
+     * @throws Exception
+     */
     @Override
     public boolean eliminarCapacitacion(Capacitacion capacitacion) throws Exception {
         return false;
