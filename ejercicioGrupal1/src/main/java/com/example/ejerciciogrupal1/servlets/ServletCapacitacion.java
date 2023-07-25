@@ -80,7 +80,13 @@ public class ServletCapacitacion extends HttpServlet {
      */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        List<Capacitacion> listaCapacitacion = capacitacionDAO.listaCapacitaciones();
+        if (!listaCapacitacion.isEmpty()) {
+            //listaCapacitacion.add(capacitacion);
+            request.setAttribute("listaCapacitaciones", listaCapacitacion);
+            request.getRequestDispatcher("listaCapacitaciones.jsp").forward(request, response); // enviar la solicitud y la respuesta al archivo JSP "tabla.jsp"
+            System.out.printf("¡Lista de Capacitaciones mostrada correctamente!");
+        }
     }
 
     /**
