@@ -41,19 +41,19 @@ public class Cliente extends Usuario {
     }
 
     /**
+     *
      * @param run
      * @param nombre
-     * @param apellidos
-     * @param fechaNacimiento
-     * @param edad
+     * @param tipo
      * @param telefono
      * @param afp
      * @param sistemaSalud
      * @param direccion
      * @param comuna
      */
-    public Cliente(int run, String nombre, String apellidos, LocalDate fechaNacimiento, Integer edad, int telefono, String afp, int sistemaSalud, String direccion, String comuna) {
-        super(run, nombre, apellidos, fechaNacimiento, edad);
+
+    public Cliente(int run, String nombre, String tipo, int telefono, String afp, int sistemaSalud, String direccion, String comuna) {
+        super(run, nombre, tipo);
         this.telefono = telefono;
         this.afp = afp;
         this.sistemaSalud = sistemaSalud;
@@ -131,32 +131,20 @@ public class Cliente extends Usuario {
         this.comuna = comuna;
     }
 
-
-    /**
-     * @return run, nombres, fechaNacimiento, edad, telefono, afp, sistemaSalud, direccion, comuna
-     */
     @Override
     public String toString() {
         return "Cliente{" +
-                ", run=" + run +
-                ", nombre='" + nombre +
-                ", apellidos='" + apellidos +
-                ", fechaNacimiento=" + fechaNacimiento +
-                ", edad=" + edad +
-                "  telefono=" + telefono +
-                ", afp='" + afp +
+                "telefono=" + telefono +
+                ", afp='" + afp + '\'' +
                 ", sistemaSalud=" + sistemaSalud +
-                ", direccion='" + direccion +
-                ", comuna='" + comuna +
+                ", direccion='" + direccion + '\'' +
+                ", comuna='" + comuna + '\'' +
+                ", run=" + run +
+                ", nombre='" + nombre + '\'' +
+                ", tipo='" + tipo + '\'' +
                 '}';
     }
 
-    /**
-     * @return nombre, apellido
-     */
-    public String obtenerNombre() {
-        return this.nombre + " " + this.apellidos;
-    }
 
     /**
      * metodo SistemaSalud
