@@ -70,6 +70,7 @@ public class UsuarioDao implements IUsuario {
         sql = "UPDATE  usuarios SET "
                 + ",nombre= '" + usuario.getNombre()
                 + "',tipo='" + usuario.getTipo()
+                + "',pass='" + usuario.getPass()
                 + "'WHERE  id=" + usuario.getId_usuario();
         //Creación de try
         try {
