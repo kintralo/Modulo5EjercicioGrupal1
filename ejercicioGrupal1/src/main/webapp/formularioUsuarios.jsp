@@ -34,5 +34,14 @@
         <div class="invalid-feedback">Campo obligatorio</div>
     </div>
 
+    <div class="form-group">
+        <label for="lblPass" class="form-label">
+            <b>Contresña</b>
+        </label>
+        <input type="password" class="form-control" id=""
+               name="txtPass" required>
+        <div class="invalid-feedback">Campo obligatorio</div>
+    </div>
+
     <button type="submit" class="btn btn-primary form-control mt-5">Guardar</button>
 </form>

@@ -33,7 +33,8 @@ public class ServletUsuario extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String nombre = request.getParameter("txtNombres");
         String tipo = request.getParameter("txtTipoUsuario");
-        Usuario usuario = new Usuario(nombre, tipo);
+        String pass = request.getParameter("txtPass");
+        Usuario usuario = new Usuario(nombre, tipo,pass);
         try {
             if (usuarioDao.createUsuario(usuario)) {
                 System.out.printf("¡Usuario Creado correctamente!");
@@ -86,7 +87,8 @@ public class ServletUsuario extends HttpServlet {
         Long id_cliente= Long.valueOf(request.getParameter("txtId_usuario"));
         String nombre = request.getParameter("txtNombres");
         String tipo = request.getParameter("txtTipoUsuario");
-        Usuario usuario = new Usuario(id_cliente,nombre, tipo);
+        String pass = request.getParameter("txtPass");
+        Usuario usuario = new Usuario(id_cliente,nombre, tipo,pass);
 
         try {
             if (usuarioDao.updateUsuario(usuario)) {

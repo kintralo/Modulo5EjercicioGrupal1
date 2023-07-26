@@ -37,11 +37,13 @@ public class Administrativo extends Usuario {
      * @param id_usuario
      * @param nombre
      * @param tipo
+     * @param pass
      * @param area
      * @param experienciaPrevia
      */
-    public Administrativo(Long id_usuario, String nombre, String tipo, String area, String experienciaPrevia) {
-        super(id_usuario, nombre, tipo);
+
+    public Administrativo(Long id_usuario, String nombre, String tipo, String pass, String area, String experienciaPrevia) {
+        super(id_usuario, nombre, tipo, pass);
         this.area = area;
         this.experienciaPrevia = experienciaPrevia;
     }
