@@ -37,11 +37,14 @@ public class UsuarioDao implements IUsuario {
     @Override
     public boolean createUsuario(Usuario usuario) throws Exception {
         boolean registar = false;
-        //Creamos la consulta SQL  para agrgar nuevos valores en la tabla.
-        sql = " INSERT INTO usuarios (nombre, tipo) VALUES ('" + usuario.getNombre() +
-                "', '" + usuario.getTipo() + "')";
+        //Creamos la consulta SQL  para agregar nuevos valores en la tabla.
+        sql = " INSERT INTO usuarios (nombre, tipo, pass) VALUES ('" + usuario.getNombre() +
+                "', '" + usuario.getTipo() +
+                "', '" + usuario.getPass()
+                + "')";
         //Creación de try
         try {
+            System.out.println(sql);
             connection = Conexion.conectar();//Agregar los datos de la conexión
             statement = connection.createStatement();
             statement.execute(sql);//Agregar la consulta para registrar
@@ -105,6 +108,7 @@ public class UsuarioDao implements IUsuario {
                 usuario.setId_usuario(resultSet.getLong(1));
                 usuario.setNombre(resultSet.getString(2));
                 usuario.setTipo(resultSet.getString(3));
+                usuario.setPass(resultSet.getString(4));
                 usuarioList.add(usuario);//Guardar los datos a lista
             }
             resultSet.close();// Cerrar resultset

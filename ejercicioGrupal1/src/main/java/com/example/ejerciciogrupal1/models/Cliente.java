@@ -45,14 +45,15 @@ public class Cliente extends Usuario {
      * @param id_usuario
      * @param nombre
      * @param tipo
+     * @param pass
      * @param telefono
      * @param afp
      * @param sistemaSalud
      * @param direccion
      * @param comuna
      */
-    public Cliente(Long id_usuario, String nombre, String tipo, int telefono, String afp, int sistemaSalud, String direccion, String comuna) {
-        super(id_usuario, nombre, tipo);
+    public Cliente(Long id_usuario, String nombre, String tipo, String pass, int telefono, String afp, int sistemaSalud, String direccion, String comuna) {
+        super(id_usuario, nombre, tipo, pass);
         this.telefono = telefono;
         this.afp = afp;
         this.sistemaSalud = sistemaSalud;
