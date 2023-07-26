@@ -8,6 +8,7 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
 import java.io.IOException;
+
 @WebServlet(name = "servletContacto", value = "/servlet-contacto")
 public class ServletContacto extends HttpServlet {
 
@@ -16,11 +17,11 @@ public class ServletContacto extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-       if (request.getSession()==null){
-           //response.sendRedirect("index.jsp");
-           RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
-           dispatcher.forward(request,response);
-       }
+        if (request.getSession() == null) {
+            //response.sendRedirect("index.jsp");
+            RequestDispatcher dispatcher = request.getRequestDispatcher("index.jsp");
+            dispatcher.forward(request, response);
+        }
     }
 
     /**
@@ -33,10 +34,26 @@ public class ServletContacto extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-        request.setAttribute("nombreSalida", request.getParameter("txtNombre"));
-        request.setAttribute("emailSalida", request.getParameter("txtEmail"));
-        request.setAttribute("mensajeSalida", request.getParameter("txtMessage"));
+        String nombre = request.getParameter("txtNombre");
+        String email = request.getParameter("txtEmail");
+        String mensaje = request.getParameter("txtMessage");
+
+
+        imprimirDatosEnConsola(nombre, email, mensaje);
+
+        request.setAttribute("nombreSalida", nombre);
+        request.setAttribute("emailSalida", email);
+        request.setAttribute("mensajeSalida", mensaje);
+
         RequestDispatcher rd = request.getRequestDispatcher("contacto.jsp");
-        rd.forward(request,  response);
+        rd.forward(request, response);
+    }
+
+    // Método
+    private void imprimirDatosEnConsola(String nombre, String email, String mensaje) {
+        System.out.println("Datos ingresados por el usuario:");
+        System.out.println("Nombre: " + nombre);
+        System.out.println("Email: " + email);
+        System.out.println("Mensaje: " + mensaje);
     }
 }
