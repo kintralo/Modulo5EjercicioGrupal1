@@ -61,6 +61,7 @@
                         <th scope="col">Código</th>
                         <th scope="col">Nombres</th>
                         <th scope="col">Tipo</th>
+
                         <th scope="col"><b>Botón</b></th>
                         <th scope="col"><b>Botón</b></th>
                     </tr>
@@ -72,16 +73,22 @@
                             <td>${usuario.id_usuario}</td>
                             <td>${usuario.nombre}</td>
                             <td>${usuario.tipo}</td>
+
                             <td>
-                                <button type="button" class="btn btn-warning " data-bs-toggle="modal"
-                                        data-bs-target="#editarUsuario">
+
+                                <button type="button" class="btn btn-warning " data-bs-toggle="modal" id="editarUsers"
+                                        data-bs-target="#editarUsuario"
+                                        idUsuario="${usuario.id_usuario}"
+                                        nombreUsuario="${usuario.nombre}"
+                                        tipoUsuario="${usuario.tipo}"
+                                        passUser="${usuario.pass}">
                                     <b>Actualizar</b>
                                 </button>
                             </td>
 
                             <td>
                                 <button type="button" class="btn btn-danger" data-toggle="modal"
-                                        data-target="#editarUsuario${usuario.id_usuario}">
+                                        data-target="">
                                     Eliminar
                                 </button>
                             </td>
@@ -121,19 +128,61 @@
 <jsp:include page='footer.jsp'/>
 
 <script>
-    const myModal = document.getElementById('myModal')
-    const myInput = document.getElementById('myInput')
+    const myModal = document.getElementById('editarUsuario')
+    //const myInput = document.getElementById('myInput')
 
     myModal.addEventListener('shown.bs.modal', () => {
-        myInput.focus()
+        //myInput.focus()
     })
 </script>
 <script>
     $(document).ready(function () {
         // Inicializar DataTable
         $(".table").DataTable();
+
+        /*$('#editarUsers').on("click",function(){
+            var idUser=  $('#editarUsers').attr("idUsuario");
+            var nombreUsuario=  $('#editarUsers').attr("nombreUsuario");
+            var tipoUsuario=  $('#editarUsers').attr("tipoUsuario");
+            var contrasenia=  $('#editarUsers').attr("passUser");
+            $('#formEditNombreUsuario').val('');
+            $('#formEditIdUser').val(idUser);
+            $('#formEditNombreUsuario').val(nombreUsuario);
+            $('#formEditSelect').val(tipoUsuario);
+            $('#formEditPass').val(contrasenia);
+
+
+        })*/
+
+        $("body").on("click", "#editarUsers", function(e) {
+            e.preventDefault();
+            var id = $(this).parent().parent().children()[0];
+            var nombres = $(this).parent().parent().children()[1];
+            var tipo = $(this).parent().parent().children()[2];
+            var pass = $(this).parent().parent().children()[2];
+            console.log($(nombres).text());
+
+            document.getElementById('formEditIdUsuario').value=$(id).text() ;
+            document.getElementById('formEditNombreUsuario').value=$(nombres).text() ;
+            document.getElementById('formEditSelect').value=$(tipo).text() ;
+            document.getElementById('formEditPassUsuario').value=$(pass).text() ;
+
+        });
+
     });
+    /**$(document).ready(function(){
+        $("#editarUsers").click(function(){
+            var nombre = $("#formEditNombreUsuario").val();
+            var correo = $("#correo").val();
+            var telefono = $("#telefono").val();
+
+            // Aquí puedes hacer algo con los datos capturados, como enviarlos a un servidor
+            // o actualizar la página con los datos ingresados.
+        });
+    });*/
 </script>
+
+
 
 <script
         src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

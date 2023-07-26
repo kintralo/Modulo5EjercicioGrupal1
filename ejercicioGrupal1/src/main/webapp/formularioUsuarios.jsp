@@ -26,7 +26,7 @@
             <b>Tipo Usuario</b>
         </label>
         <select class="form-select" aria-label="Default select example" name="txtTipoUsuario">
-            <option selected>Selecciones un Usuario</option>
+            <option selected disabled>Selecciones un Usuario</option>
             <option value="Administrativo"><b>Administrativo</b></option>
             <option value="Cliente"><b>Cliente</b></option>
             <option value="Profesional"><b>Profesional</b></option>
