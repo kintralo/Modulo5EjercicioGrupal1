@@ -1,4 +1,4 @@
-*
+
 # Sprint Final del Modulo 5
 
 Proyecto final del módulo aplicando los conceptos vistos
