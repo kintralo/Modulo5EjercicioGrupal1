@@ -147,4 +147,34 @@ public class UsuarioDao implements IUsuario {
         }
         return eliminar;
     }
+
+    public List<Usuario> login(Usuario usuario) throws Exception {
+        //Creamos la consulta SQL  para todos los valores en la tabla.
+        sql = "SELECT * FROM usuarios where nombre='"+usuario.getNombre()+"' AND pass='"+usuario.getPass()+"'";
+        List<Usuario> usuarioList = new ArrayList<Usuario>();
+        //Creación de try
+        try {
+            connection = Conexion.conectar();//Agregar los datos de la conexión
+            statement = connection.createStatement();
+            resultSet = statement.executeQuery(sql);//Agregar la consulta para registrar
+
+            while (resultSet.next()) {
+                //Creación de un objeto para agregarlo a la lista
+                Usuario usuario1 = new Usuario();
+                //Obtencion de datos de la tabla campo por campo
+                usuario1.setId_usuario(resultSet.getLong(1));
+                usuario1.setNombre(resultSet.getString(2));
+                usuario1.setTipo(resultSet.getString(3));
+                usuario1.setPass(resultSet.getString(4));
+                usuarioList.add(usuario1);//Guardar los datos a lista
+            }
+            resultSet.close();// Cerrar resultset
+            statement.close();// Cerrar declacaración
+            connection.close();// Cerrar conexión-
+        } catch (SQLException e) {
+            System.out.println("Error: listaCapacitaciones");
+            e.printStackTrace();
+        }
+        return usuarioList;
+    }
 }

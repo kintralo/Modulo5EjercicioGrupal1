@@ -17,12 +17,28 @@ public class Usuario {
     protected String nombre;
     protected String tipo;
     protected String pass;
-
+    public Usuario(Long id_usuario, String nombre, String tipo, String pass) {
+        this.id_usuario = id_usuario;
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.pass = pass;
+    }
+    public Usuario( String nombre, String tipo,String pass) {
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.pass = pass;
+    }
+    public Usuario(String nombre, String pass) {
+        this.nombre = nombre;
+        this.pass = pass;
+    }
     /**
      * Construct vacío
      */
     public Usuario() {
     }
+
+
 
     /**
      *
@@ -31,12 +47,7 @@ public class Usuario {
      * @param tipo
      * @param pass
      */
-    public Usuario(Long id_usuario, String nombre, String tipo, String pass) {
-        this.id_usuario = id_usuario;
-        this.nombre = nombre;
-        this.tipo = tipo;
-        this.pass = pass;
-    }
+
 
     /**
      *
@@ -44,11 +55,7 @@ public class Usuario {
      * @param tipo
      * @param pass
      */
-    public Usuario( String nombre, String tipo,String pass) {
-        this.nombre = nombre;
-        this.tipo = tipo;
-        this.pass = pass;
-    }
+
 
     /**
      *
