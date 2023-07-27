@@ -84,7 +84,8 @@ public class ServletUsuario extends HttpServlet {
      */
     @Override
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Long id_cliente= Long.valueOf(request.getParameter("txtId_usuario"));
+        System.out.println("método doPut");
+        Long id_cliente= Long.valueOf(request.getParameter("txtId_Usuario"));
         String nombre = request.getParameter("txtNombres");
         String tipo = request.getParameter("txtTipoUsuario");
         String pass = request.getParameter("txtPass");
@@ -103,7 +104,6 @@ public class ServletUsuario extends HttpServlet {
             }
         } catch (Exception e) {
             System.out.println("Error: doPost ServletUsuario");
-
         }
     }
 }

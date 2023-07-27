@@ -8,20 +8,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 
-<form action="servlet-usuario" method="PUT" class="was-validated" >
+<form action="servlet-actualizar-usuario" method="POST" class="was-validated" >
     <div class="form-group">
         <label for="lblCodigoUsuario" class="form-label">
             <b>Código usuario</b>
         </label>
+    <input type="number" class="form-control" id="formEditIdUsuario"
+           name="txtId_Usuario"  >
     </div>
-    <input type="text" class="form-control" id="formEditIdUsuario"
-           name="txtId_usuario" value="" disabled="true">
     <div class="form-group">
         <label for="lblNombres" class="form-label">
             <b>Nombres</b>
         </label>
         <input type="text" class="form-control" id="formEditNombreUsuario"
-               name="txtNombres" value=""
+               name="txtNombres"
                required>
         <div class="invalid-feedback">Campo obligatorio</div>
     </div>
@@ -43,8 +43,7 @@
             <b>Pass</b>
         </label>
         <input type="password" class="form-control" id="formEditPassUsuario"
-               name="txtPass" value=""
-               required>
+               name="txtPass" required>
         <div class="invalid-feedback">Campo obligatorio</div>
     </div>
 

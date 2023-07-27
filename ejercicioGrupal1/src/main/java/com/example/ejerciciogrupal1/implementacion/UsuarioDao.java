@@ -68,12 +68,13 @@ public class UsuarioDao implements IUsuario {
         boolean actualizar = false;
         //Creamos la consulta SQL  para actualizar los valores en la tabla.
         sql = "UPDATE  usuarios SET "
-                + ",nombre= '" + usuario.getNombre()
+                + "nombre= '" + usuario.getNombre()
                 + "',tipo='" + usuario.getTipo()
-                + "',pass='" + usuario.getPass()
+                + "', pass ='" + usuario.getPass()
                 + "'WHERE  id=" + usuario.getId_usuario();
         //Creación de try
         try {
+            System.out.println(sql);
             connection = Conexion.conectar();//Agregar los datos de la conexión
             statement = connection.createStatement();
             statement.execute(sql);//Agregar la consulta para registrar
